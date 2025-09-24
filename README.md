@@ -76,5 +76,11 @@ Com apoio técnico e criativo de **Copilot (Microsoft)**
 
 ---
 
+## 📜 Licença
+
+- Código-fonte: [MIT License](LICENSE)
+- Conteúdo visual e textual: [CC BY-NC 4.0](LICENSE-CC.txt)
+
+---
 > Este projeto é mais que código. É uma expressão digital da Synkroniq — on
 
