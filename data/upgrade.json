@@ -1,0 +1,20 @@
+[
+  {
+    "id": "u001",
+    "nome": "Kit Performance Gamer",
+    "descricao": "Placa de vídeo RTX + SSD NVMe + Fonte 650W",
+    "preco": "R$ 2.499,00"
+  },
+  {
+    "id": "u002",
+    "nome": "Kit Produtividade Pro",
+    "descricao": "Monitor 27\" + Teclado mecânico + Hub USB-C",
+    "preco": "R$ 1.199,00"
+  },
+  {
+    "id": "u003",
+    "nome": "Consultoria Técnica Personalizada",
+    "descricao": "Análise completa do seu setup e recomendações sob medida",
+    "preco": "R$ 299,00"
+  }
+]
