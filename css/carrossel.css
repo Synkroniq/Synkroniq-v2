@@ -1,0 +1,46 @@
+#carrossel {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+  background-color: #f0f0f0;
+}
+
+.slide {
+  display: none;
+  padding: 2rem;
+  text-align: center;
+}
+
+.slide.ativo {
+  display: block;
+}
+
+.slide h2 {
+  color: #007BFF;
+  margin-bottom: 0.5rem;
+}
+
+.slide p {
+  font-size: 1.1rem;
+}
+
+#carrossel .nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  border-radius: 50%;
+}
+
+#carrossel .nav-btn.left {
+  left: 10px;
+}
+
+#carrossel .nav-btn.right {
+  right: 10px;
+}
