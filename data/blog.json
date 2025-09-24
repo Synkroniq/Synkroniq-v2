@@ -1,0 +1,26 @@
+[
+  {
+    "id": "b001",
+    "titulo": "Como escolher o SSD ideal para seu setup",
+    "resumo": "Entenda as diferenças entre SATA, NVMe e PCIe para maximizar desempenho.",
+    "autor": "Eduardo",
+    "data": "20/09/2025",
+    "link": "https://synkroniq.com.br/blog/ssd-ideal"
+  },
+  {
+    "id": "b002",
+    "titulo": "5 erros comuns na montagem de PCs",
+    "resumo": "Evite problemas de compatibilidade e superaquecimento com essas dicas.",
+    "autor": "Eduardo",
+    "data": "15/09/2025",
+    "link": "https://synkroniq.com.br/blog/erros-montagem"
+  },
+  {
+    "id": "b003",
+    "titulo": "Upgrade de memória RAM: vale a pena?",
+    "resumo": "Veja quando o upgrade realmente traz ganho de performance.",
+    "autor": "Eduardo",
+    "data": "10/09/2025",
+    "link": "https://synkroniq.com.br/blog/upgrade-ram"
+  }
+]
