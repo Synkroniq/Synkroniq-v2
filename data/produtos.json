@@ -1,0 +1,16 @@
+[
+  {
+    "id": "001",
+    "nome": "Kit Upgrade Técnico",
+    "descricao": "Placa-mãe + SSD + Fonte",
+    "preco": "R$ 799,00",
+    "expiraEm": "2025-10-15T23:59:59"
+  },
+  {
+    "id": "002",
+    "nome": "Monitor Full HD 24\"",
+    "descricao": "Ideal para produtividade e jogos",
+    "preco": "R$ 499,00",
+    "expiraEm": "2025-10-10T23:59:59"
+  }
+]
