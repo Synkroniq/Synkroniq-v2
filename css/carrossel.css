@@ -69,3 +69,38 @@ body.dark #carrossel .nav-btn {
 #carrossel .nav-btn.right {
   right: 10px;
 }
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: #ddd;
+  position: relative;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.progress-bar::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #007BFF;
+  animation: progressAnim 5s linear forwards;
+}
+
+@keyframes progressAnim {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+#carrossel .nav-btn {
+  z-index: 10;
+}
+
+#carrossel .nav-btn:hover {
+  background-color: #0056b3;
+}
+
+body.dark #carrossel .nav-btn:hover {
+  background-color: #007BFF;
+}
