@@ -16,6 +16,9 @@
   margin-bottom: 1.5rem;
   color: #007BFF;
   text-align: center;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* 🌙 Modo escuro */
@@ -46,6 +49,13 @@ body.dark .section h2 {
 
 .grid-4 {
   grid-template-columns: repeat(4, 1fr);
+}
+
+/* 🎞️ Animações suaves nos itens de grid */
+.grid-2 > *,
+.grid-3 > *,
+.grid-4 > * {
+  animation: fadeIn 0.6s ease-in-out;
 }
 
 /* 📱 Responsividade */
@@ -102,6 +112,19 @@ body.dark .section h2 {
 
 .spacer-lg {
   margin-top: 4rem;
+}
+
+/* 📏 Espaçamentos inferiores */
+.spacer-sm-bottom {
+  margin-bottom: 1rem;
+}
+
+.spacer-md-bottom {
+  margin-bottom: 2rem;
+}
+
+.spacer-lg-bottom {
+  margin-bottom: 4rem;
 }
 
 /* 🎞️ Animações suaves */
