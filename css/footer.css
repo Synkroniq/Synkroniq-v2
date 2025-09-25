@@ -1,3 +1,4 @@
+/* 🧱 Grid do rodapé */
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -8,27 +9,33 @@
   text-align: center;
 }
 
+/* 🔗 Links do rodapé */
 .footer-links a {
   display: block;
   margin: 0.3rem 0;
   color: #00FF99;
   text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 .footer-links a:hover {
   text-decoration: underline;
+  color: #00FFCC;
 }
 
+/* 📱 Ícones sociais */
 .footer-social a {
   margin: 0 0.5rem;
   font-size: 1.5rem;
   color: #007BFF;
+  transition: color 0.3s ease;
 }
 
 .footer-social a:hover {
   color: #00FF99;
 }
 
+/* 🌙 Modo escuro */
 body.dark .footer-grid {
   background-color: #000;
   color: #ccc;
@@ -38,6 +45,31 @@ body.dark .footer-links a {
   color: #00FFAA;
 }
 
+body.dark .footer-links a:hover {
+  color: #66FFCC;
+}
+
 body.dark .footer-social a {
   color: #66B2FF;
+}
+
+body.dark .footer-social a:hover {
+  color: #00FFAA;
+}
+
+/* 📱 Responsividade extra */
+@media (max-width: 480px) {
+  .footer-grid {
+    padding: 1.5rem 1rem;
+    gap: 1.2rem;
+  }
+
+  .footer-social a {
+    font-size: 1.3rem;
+    margin: 0 0.3rem;
+  }
+
+  .footer-links a {
+    font-size: 0.95rem;
+  }
 }
