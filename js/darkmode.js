@@ -1,23 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const body = document.body;
+  const hora = new Date().getHours();
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-  if (prefersDark) {
+  // Aplica modo escuro automático
+  if (prefersDark || hora >= 18 || hora < 6) {
     body.classList.add("dark");
   }
-  
-  if (hora >= 18 || hora < 6) {
-    corpo.classList.add("dark");
-  } else {
-    corpo.classList.remove("dark");
-  }
 
+  // Cria botão de alternância
   const toggleBtn = document.createElement("button");
-  toggleBtn.textContent = "🌙";
   toggleBtn.id = "toggle-dark";
+  toggleBtn.title = "Alternar tema";
+  toggleBtn.innerHTML = "🌙";
   document.body.appendChild(toggleBtn);
 
+  // Alterna tema ao clicar
   toggleBtn.addEventListener("click", () => {
     body.classList.toggle("dark");
+    toggleBtn.innerHTML = body.classList.contains("dark") ? "☀️" : "🌙";
   });
 });
