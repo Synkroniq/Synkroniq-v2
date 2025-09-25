@@ -1,12 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
   const slides = document.querySelectorAll(".slide");
+  const indicadoresContainer = document.getElementById("indicadores");
   const timerEl = document.getElementById("timer");
-  if (!timerEl) return;
+  const carrosselEl = document.getElementById("carrossel");
+  if (!timerEl || !carrosselEl) return;
 
   let index = 0;
   let intervalo;
+  let touchStartX = 0;
+
+  // Cria bolinhas
+  slides.forEach((_, i) => {
+    const bolinha = document.createElement("span");
+    bolinha.classList.add("bolinha");
+    if (i === index) bolinha.classList.add("ativa");
+
+    bolinha.addEventListener("click", () => {
+      clearInterval(intervalo);
+      mostrarSlide(i);
+      setTimeout(iniciarCarrossel, 7000);
+    });
+
+    indicadoresContainer.appendChild(bolinha);
+  });
 
   function mostrarSlide(i) {
+    const bolinhas = document.querySelectorAll(".bolinha");
+    bolinhas.forEach((b, idx) => {
+      b.classList.toggle("ativa", idx === i);
+    });
+
     slides.forEach((slide, idx) => {
       slide.classList.remove("ativo");
       slide.setAttribute("aria-hidden", "true");
@@ -15,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
     slides[i].classList.add("ativo");
     slides[i].removeAttribute("aria-hidden");
 
-    // Reinicia animação da barra de progresso
     const barras = document.querySelectorAll(".progress-bar");
     barras.forEach(barra => {
       const clone = barra.cloneNode(true);
@@ -36,13 +58,29 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("btn-esq").addEventListener("click", () => {
     clearInterval(intervalo);
     anteriorSlide();
-    setTimeout(iniciarCarrossel, 7000); // pausa de 7 segundos
+    setTimeout(iniciarCarrossel, 7000);
   });
 
   document.getElementById("btn-dir").addEventListener("click", () => {
     clearInterval(intervalo);
     proximoSlide();
-    setTimeout(iniciarCarrossel, 7000); // pausa de 7 segundos
+    setTimeout(iniciarCarrossel, 7000);
+  });
+
+  // Swipe horizontal
+  carrosselEl.addEventListener("touchstart", e => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  carrosselEl.addEventListener("touchend", e => {
+    const touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+
+    if (Math.abs(diff) > 50) {
+      clearInterval(intervalo);
+      diff > 0 ? proximoSlide() : anteriorSlide();
+      setTimeout(iniciarCarrossel, 7000);
+    }
   });
 
   function iniciarCarrossel() {
