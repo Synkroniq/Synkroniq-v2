@@ -5,6 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (prefersDark) {
     body.classList.add("dark");
   }
+  
+  if (hora >= 18 || hora < 6) {
+    corpo.classList.add("dark");
+  } else {
+    corpo.classList.remove("dark");
+  }
 
   const toggleBtn = document.createElement("button");
   toggleBtn.textContent = "🌙";
