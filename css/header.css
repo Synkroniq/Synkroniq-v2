@@ -1,9 +1,13 @@
+/* Cabeçalho flexível */
 .header-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap; /* melhora responsividade */
+  gap: 1rem;
 }
 
+/* Logo principal */
 .logo {
   font-size: 2rem;
   font-weight: bold;
@@ -14,10 +18,13 @@
   color: #00FF99;
 }
 
+/* Menu de navegação */
 .menu ul {
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  margin: 0;
+  padding: 0;
 }
 
 .menu a {
@@ -31,6 +38,7 @@
   color: #007BFF;
 }
 
+/* Modo escuro */
 body.dark .logo {
   color: #66B2FF;
 }
@@ -45,4 +53,19 @@ body.dark .menu a {
 
 body.dark .menu a:hover {
   color: #66B2FF;
+}
+
+/* Botão de alternância de tema */
+#toggle-dark {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #007BFF;
+  margin-left: 1rem;
+  transition: color 0.3s ease;
+}
+
+body.dark #toggle-dark {
+  color: #00FFAA;
 }
