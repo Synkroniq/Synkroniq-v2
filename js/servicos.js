@@ -1,3 +1,17 @@
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("components/header.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("header-container").innerHTML = html;
+    });
+
+  fetch("components/footer.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("footer-container").innerHTML = html;
+    });
+});
+
 fetch("data/servicos.json")
   .then(res => res.json())
   .then(servicos => {
