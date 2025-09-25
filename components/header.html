@@ -1,7 +1,12 @@
 <header class="topo fade-in">
   <div class="container header-flex">
-    <h1 class="logo">Synkroniq<span class="tech">.tech</span></h1>
-    <nav class="menu">
+    <!-- Logotipo -->
+    <a href="index.html" class="logo" aria-label="Página inicial Synkroniq">
+      Synkroniq<span class="tech">.tech</span>
+    </a>
+
+    <!-- Navegação principal -->
+    <nav class="menu" aria-label="Navegação principal">
       <ul>
         <li><a href="index.html">Início</a></li>
         <li><a href="produtos.html">Produtos</a></li>
@@ -12,5 +17,10 @@
         <li><a href="contato.html">Contato</a></li>
       </ul>
     </nav>
+
+    <!-- Botão de alternância de tema -->
+    <button id="toggle-dark" title="Alternar tema" aria-label="Alternar entre modo claro e escuro">
+      <i class="fas fa-moon" aria-hidden="true"></i>
+    </button>
   </div>
 </header>
