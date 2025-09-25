@@ -1,0 +1,43 @@
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #222;
+  color: white;
+  text-align: center;
+}
+
+.footer-links a {
+  display: block;
+  margin: 0.3rem 0;
+  color: #00FF99;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-social a {
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  color: #007BFF;
+}
+
+.footer-social a:hover {
+  color: #00FF99;
+}
+
+body.dark .footer-grid {
+  background-color: #000;
+  color: #ccc;
+}
+
+body.dark .footer-links a {
+  color: #00FFAA;
+}
+
+body.dark .footer-social a {
+  color: #66B2FF;
+}
