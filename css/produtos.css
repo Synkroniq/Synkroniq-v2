@@ -5,13 +5,14 @@
   padding: 2rem;
 }
 
+/* Modo claro */
 .card-produto {
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 1rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
 .card-produto:hover {
@@ -25,6 +26,7 @@
 
 .card-produto p {
   margin-bottom: 0.5rem;
+  color: #333;
 }
 
 .card-produto .preco {
@@ -45,4 +47,33 @@
   color: white;
   text-decoration: none;
   border-radius: 4px;
+}
+
+/* Modo escuro */
+body.dark .card-produto {
+  background-color: #1e1e1e;
+  border-color: #444;
+  color: #f5f5f5;
+  box-shadow: 0 2px 6px rgba(255,255,255,0.05);
+}
+
+body.dark .card-produto h3 {
+  color: #66B2FF;
+}
+
+body.dark .card-produto p {
+  color: #ccc;
+}
+
+body.dark .card-produto .preco {
+  color: #00FFAA;
+}
+
+body.dark .card-produto .expira {
+  color: #bbb;
+}
+
+body.dark .card-produto a {
+  background-color: #3399FF;
+  color: white;
 }
