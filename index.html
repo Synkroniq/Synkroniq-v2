@@ -4,56 +4,72 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Synkroniq</title>
+
+  <!-- Estilos principais -->
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/carrossel.css" />
   <link rel="stylesheet" href="css/darkmode.css" />
   <link rel="stylesheet" href="css/modal.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="css/header.css" />
   <link rel="stylesheet" href="css/footer.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- PWA -->
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#007BFF" />
+
+  <!-- Fallback para navegadores sem JS -->
+  <noscript>
+    <style>
+      .container { display: none; }
+    </style>
+    <p style="text-align:center; padding:1rem; background:#ffdddd;">
+      Este site requer JavaScript para funcionar corretamente.
+    </p>
+  </noscript>
 </head>
 <body>
-<div id="header-container"></div>
 
-<noscript>
-  <p style="text-align:center; padding:1rem;">Este site requer JavaScript para funcionar corretamente.</p>
-</noscript>
-  
-<main class="container" role="main">
-  <section id="carrossel" aria-label="Destaques promocionais">
-  <button class="nav-btn left" id="btn-esq">&#10094;</button>
-  <button class="nav-btn right" id="btn-dir">&#10095;</button>
+  <!-- Cabeçalho dinâmico -->
+  <div id="header-container"></div>
 
-  <div class="slide ativo">
+  <main class="container" role="main">
+    <section id="carrossel" aria-label="Destaques promocionais">
+      <!-- Botões de navegação -->
+      <button class="nav-btn left" id="btn-esq" aria-label="Slide anterior">&#10094;</button>
+      <button class="nav-btn right" id="btn-dir" aria-label="Próximo slide">&#10095;</button>
 
-    <h2>Promoção relâmpago</h2>
-    <p>Kit técnico com 20% off até <span id="timer"></span></p>
-    <div class="progress-bar"></div>
-  </div>
+      <!-- Slides -->
+      <div class="slide ativo" aria-hidden="false">
+        <h2>Promoção relâmpago</h2>
+        <p>Kit técnico com 20% off até <span id="timer"></span></p>
+        <div class="progress-bar"></div>
+      </div>
 
-  <div class="slide">
+      <div class="slide" aria-hidden="true">
+        <h2>Upgrade Personalizado</h2>
+        <p>Monte seu setup com consultoria técnica exclusiva</p>
+        <div class="progress-bar"></div>
+      </div>
 
-    <h2>Upgrade Personalizado</h2>
-    <p>Monte seu setup com consultoria técnica exclusiva</p>
-    <div class="progress-bar"></div>
-  </div>
+      <div class="slide" aria-hidden="true">
+        <h2>Serviços Profissionais</h2>
+        <p>Formatação, otimização e instalação com agendamento via WhatsApp</p>
+        <div class="progress-bar"></div>
+      </div>
 
-  <div class="slide">
+      <!-- Indicadores -->
+      <div class="indicadores" id="indicadores"></div>
+    </section>
+  </main>
 
-    <h2>Serviços Profissionais</h2>
-    <p>Formatação, otimização e instalação com agendamento via WhatsApp</p>
-    <div class="progress-bar"></div>
-  </div>
+  <!-- Rodapé dinâmico -->
+  <div id="footer-container"></div>
 
-<div class="indicadores" id="indicadores"></div>
-</section>
-
-</main>
-  
-<div id="footer-container"></div>
+  <!-- Scripts -->
   <script src="js/main.js"></script>
   <script src="js/carrossel.js"></script>
   <script src="js/darkmode.js"></script>
