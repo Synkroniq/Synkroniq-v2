@@ -1,27 +1,29 @@
 // Aplica o tema salvo ou automático antes do DOM renderizar
+const temaSalvo = localStorage.getItem("tema");
+const hora = new Date().getHours();
+const prefereEscuro = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
 if (
-  localStorage.getItem("tema") === "dark" ||
-  (!localStorage.getItem("tema") &&
-    (window.matchMedia("(prefers-color-scheme: dark)").matches ||
-     new Date().getHours() >= 18 || new Date().getHours() < 6))
+  temaSalvo === "dark" ||
+  (!temaSalvo && (prefereEscuro || hora >= 18 || hora < 6))
 ) {
-  document.documentElement.classList.add("dark");
+  document.body.classList.add("dark");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const html = document.documentElement;
+  const body = document.body;
 
   // Cria botão de alternância
   const toggleBtn = document.createElement("button");
   toggleBtn.id = "toggle-dark";
   toggleBtn.title = "Alternar tema";
-  toggleBtn.innerHTML = html.classList.contains("dark") ? "☀️" : "🌙";
+  toggleBtn.innerHTML = body.classList.contains("dark") ? "☀️" : "🌙";
   document.body.appendChild(toggleBtn);
 
   // Alterna tema ao clicar
   toggleBtn.addEventListener("click", () => {
-    html.classList.toggle("dark");
-    const temaAtual = html.classList.contains("dark") ? "dark" : "light";
+    body.classList.toggle("dark");
+    const temaAtual = body.classList.contains("dark") ? "dark" : "light";
     localStorage.setItem("tema", temaAtual);
     toggleBtn.innerHTML = temaAtual === "dark" ? "☀️" : "🌙";
   });
