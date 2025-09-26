@@ -4,36 +4,61 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contato | Synkroniq</title>
+
+  <!-- Estilos -->
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/darkmode.css" />
   <link rel="stylesheet" href="css/header.css" />
   <link rel="stylesheet" href="css/footer.css" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#007BFF" />
+
+  <!-- Fallback para JS desativado -->
+  <noscript>
+    <style>
+      .container { display: none; }
+    </style>
+    <p style="text-align:center; padding:1rem; background:#ffdddd;">
+      Este site requer JavaScript para funcionar corretamente.
+    </p>
+  </noscript>
 </head>
 <body>
-<div id="header-container"></div>
 
-  <main style="padding: 2rem;">
+  <!-- Cabeçalho dinâmico -->
+  <div id="header-container"></div>
+
+  <main role="main" aria-label="Formulário de contato" style="padding: 2rem;">
     <h2>Entre em contato</h2>
-    <form>
-      <label>Nome:</label><br />
-      <input type="text" name="nome" required /><br /><br />
-      <label>Email:</label><br />
-      <input type="email" name="email" required /><br /><br />
-      <label>Mensagem:</label><br />
-      <textarea name="mensagem" rows="5" required></textarea><br /><br />
+    <form action="#" method="post">
+      <label for="nome">Nome:</label><br />
+      <input type="text" id="nome" name="nome" required /><br /><br />
+
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" required /><br /><br />
+
+      <label for="mensagem">Mensagem:</label><br />
+      <textarea id="mensagem" name="mensagem" rows="5" required></textarea><br /><br />
+
       <button type="submit">Enviar</button>
     </form>
 
     <h3>Outros canais</h3>
     <ul>
-      <li><a href="https://wa.me/5544997648490" target="_blank">WhatsApp Comercial</a></li>
-     <!-- <li><a href="mailto:contato@synkroniq.com.br">Email: contato@synkroniq.com.br</a></li> -->
-      <li><a href="https://www.instagram.com/synkroniq.tech" target="_blank">Instagram</a></li>
+      <li><a href="https://wa.me/5544997648490" target="_blank" rel="noopener">WhatsApp Comercial</a></li>
+      <!-- <li><a href="mailto:contato@synkroniq.com.br">Email: contato@synkroniq.com.br</a></li> -->
+      <li><a href="https://www.instagram.com/synkroniq.tech" target="_blank" rel="noopener">Instagram</a></li>
     </ul>
   </main>
-  
-<div id="footer-container"></div>
+
+  <!-- Rodapé dinâmico -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
   <script src="js/darkmode.js"></script>
 </body>
 </html>
