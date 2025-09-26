@@ -4,34 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Upgrade | Synkroniq</title>
+
+  <!-- Estilos -->
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/upgrade.css" />
   <link rel="stylesheet" href="css/darkmode.css" />
   <link rel="stylesheet" href="css/header.css" />
   <link rel="stylesheet" href="css/footer.css" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#007BFF" />
+
+  <!-- Fallback para JS desativado -->
+  <noscript>
+    <style>
+      .container { display: none; }
+    </style>
+    <p style="text-align:center; padding:1rem; background:#ffdddd;">
+      Este site requer JavaScript para funcionar corretamente.
+    </p>
+  </noscript>
 </head>
 <body>
-  <header>
-    <h1>Upgrade Técnico</h1>
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="produtos.html">Produtos</a>
-      <a href="servicos.html">Serviços</a>
-      <a href="blog.html">Blog</a>
-      <a href="contato.html">Contato</a>
-    </nav>
-  </header>
 
-  <main id="lista-upgrades">
-    <!-- Kits serão carregados aqui -->
+  <!-- Cabeçalho dinâmico -->
+  <div id="header-container"></div>
+
+  <main id="lista-upgrades" role="main" aria-label="Lista de kits de upgrade técnico">
+    <!-- Kits serão carregados aqui dinamicamente -->
   </main>
 
-  <footer>
-    <p>&copy; 2025 Synkroniq. Todos os direitos reservados.</p>
-  </footer>
+  <!-- Rodapé dinâmico -->
+  <div id="footer-container"></div>
 
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
   <script src="js/upgrade.js"></script>
-    <script src="js/darkmode.js"></script>
+  <script src="js/darkmode.js"></script>
 </body>
 </html>
