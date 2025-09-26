@@ -75,3 +75,20 @@ body.dark footer {
     font-size: 0.95rem;
   }
 }
+
+/* 🎨 Correção de contraste para logo no cabeçalho */
+header .logo {
+  color: white;
+}
+
+header .logo .tech {
+  color: #00FF99;
+}
+
+body.dark header .logo {
+  color: #66B2FF;
+}
+
+body.dark header .logo .tech {
+  color: #00FFAA;
+}
