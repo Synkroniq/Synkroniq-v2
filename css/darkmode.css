@@ -56,3 +56,14 @@ body.dark footer nav a:hover {
   color: #ffffff;
   text-decoration: underline;
 }
+
+body.dark footer a,
+body.dark footer nav a {
+  color: #f5f5f5 !important;
+  transition: color 0.3s ease;
+}
+
+body.dark footer a:hover {
+  color: #ffffff !important;
+  text-decoration: underline;
+}
