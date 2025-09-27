@@ -103,7 +103,7 @@ body.dark .section h2 {
   }
 
   #mainMenu {
-    display: flex;
+    display: none;
     flex-direction: column;
     position: fixed;
     top: 0;
@@ -123,6 +123,7 @@ body.dark .section h2 {
   }
 
   #mainMenu.active {
+    display: flex;
     transform: translateX(0);
     opacity: 1;
     pointer-events: auto;
@@ -152,4 +153,8 @@ body.dark .section h2 {
 main, .section, .content {
   position: relative;
   z-index: 1;
+}
+
+body {
+  overflow-x: hidden;
 }
