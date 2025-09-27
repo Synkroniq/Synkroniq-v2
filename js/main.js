@@ -1,3 +1,10 @@
+function toggleMenu() {
+  const menu = document.querySelector('.menu ul');
+  if (menu) {
+    menu.classList.toggle('active');
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Synkroniq 2.0 iniciado");
 
@@ -5,7 +12,15 @@ document.addEventListener("DOMContentLoaded", () => {
   if (header) {
     fetch("/Synkroniq-v2/components/header.html")
       .then(res => res.text())
-      .then(html => header.innerHTML = html)
+      .then(html => {
+        header.innerHTML = html;
+
+        // Ativa o botão sanduíche após o header ser carregado
+        const toggleBtn = document.querySelector('.menu-toggle');
+        if (toggleBtn) {
+          toggleBtn.addEventListener('click', toggleMenu);
+        }
+      })
       .catch(err => console.error("Erro ao carregar o cabeçalho:", err));
   }
 
