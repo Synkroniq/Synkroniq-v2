@@ -15,11 +15,24 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(html => {
         header.innerHTML = html;
 
-        // Ativa o botão sanduíche após o header ser carregado
-        const toggleBtn = document.querySelector('.menu-toggle');
-        if (toggleBtn) {
-          toggleBtn.addEventListener('click', toggleMenu);
-        }
+        // Aguarda o DOM reconhecer os novos elementos
+        requestAnimationFrame(() => {
+          const toggleBtn = document.querySelector('.menu-toggle');
+          if (toggleBtn) {
+            toggleBtn.addEventListener('click', toggleMenu);
+          }
+
+          // Fecha o menu ao clicar em qualquer item
+          const menuLinks = document.querySelectorAll('.menu ul li a');
+          menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+              const menu = document.querySelector('.menu ul');
+              if (menu && menu.classList.contains('active')) {
+                menu.classList.remove('active');
+              }
+            });
+          });
+        });
       })
       .catch(err => console.error("Erro ao carregar o cabeçalho:", err));
   }
@@ -28,7 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (footer) {
     fetch("/Synkroniq-v2/components/footer.html")
       .then(res => res.text())
-      .then(html => footer.innerHTML = html)
+      .then(html => {
+        footer.innerHTML = html;
+      })
       .catch(err => console.error("Erro ao carregar o rodapé:", err));
   }
 
@@ -36,7 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (card) {
     fetch("/Synkroniq-v2/components/card-servico.html")
       .then(res => res.text())
-      .then(html => card.innerHTML = html)
+      .then(html => {
+        card.innerHTML = html;
+      })
       .catch(err => console.error("Erro ao carregar o card de serviço:", err));
   }
 
