@@ -1,5 +1,5 @@
 function toggleMenu() {
-  const menu = document.querySelector('.menu ul');
+  const menu = document.getElementById('mainMenu');
   if (menu) {
     menu.classList.toggle('active');
   }
@@ -8,6 +8,7 @@ function toggleMenu() {
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Synkroniq 2.0 iniciado");
 
+  // Carrega o cabeçalho
   const header = document.getElementById("header-container");
   if (header) {
     fetch("/Synkroniq-v2/components/header.html")
@@ -15,28 +16,28 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(html => {
         header.innerHTML = html;
 
-        // Aguarda o DOM reconhecer os novos elementos
         requestAnimationFrame(() => {
           const toggleBtn = document.querySelector('.menu-toggle');
-          if (toggleBtn) {
-            toggleBtn.addEventListener('click', toggleMenu);
-          }
+          const menu = document.getElementById('mainMenu');
 
-          // Fecha o menu ao clicar em qualquer item
-          const menuLinks = document.querySelectorAll('.menu ul li a');
-          menuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-              const menu = document.querySelector('.menu ul');
-              if (menu && menu.classList.contains('active')) {
-                menu.classList.remove('active');
-              }
+          if (toggleBtn && menu) {
+            toggleBtn.addEventListener('click', () => {
+              menu.classList.toggle('active');
             });
-          });
+
+            // Fecha o menu ao clicar em um item
+            menu.querySelectorAll('a').forEach(link => {
+              link.addEventListener('click', () => {
+                menu.classList.remove('active');
+              });
+            });
+          }
         });
       })
       .catch(err => console.error("Erro ao carregar o cabeçalho:", err));
   }
 
+  // Carrega o rodapé
   const footer = document.getElementById("footer-container");
   if (footer) {
     fetch("/Synkroniq-v2/components/footer.html")
@@ -47,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch(err => console.error("Erro ao carregar o rodapé:", err));
   }
 
+  // Carrega o card de serviço
   const card = document.getElementById("card-servico-container");
   if (card) {
     fetch("/Synkroniq-v2/components/card-servico.html")
@@ -57,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch(err => console.error("Erro ao carregar o card de serviço:", err));
   }
 
+  // Registra o Service Worker
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/Synkroniq-v2/service-worker.js")
       .then(() => console.log("Service Worker registrado com sucesso"))
