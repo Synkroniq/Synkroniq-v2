@@ -5,6 +5,19 @@ function toggleMenu() {
   }
 }
 
+function closeMenuOnOutsideClick(e) {
+  const menu = document.getElementById('mainMenu');
+  const toggleBtn = document.querySelector('.menu-toggle');
+  if (
+    menu &&
+    menu.classList.contains('active') &&
+    !menu.contains(e.target) &&
+    !toggleBtn.contains(e.target)
+  ) {
+    menu.classList.remove('active');
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Synkroniq 2.0 iniciado");
 
@@ -21,16 +34,17 @@ document.addEventListener("DOMContentLoaded", () => {
           const menu = document.getElementById('mainMenu');
 
           if (toggleBtn && menu) {
-            toggleBtn.addEventListener('click', () => {
-              menu.classList.toggle('active');
-            });
+            toggleBtn.addEventListener('click', toggleMenu);
 
-            // Fecha o menu ao clicar em um item
+            // Fecha ao clicar em item
             menu.querySelectorAll('a').forEach(link => {
               link.addEventListener('click', () => {
                 menu.classList.remove('active');
               });
             });
+
+            // Fecha ao clicar fora
+            document.addEventListener('click', closeMenuOnOutsideClick);
           }
         });
       })
