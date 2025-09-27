@@ -173,3 +173,17 @@ body.dark .section h2 {
     display: flex;
   }
 }
+
+/* 🔧 Corrige sobreposição do menu sanduíche */
+.menu ul {
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+/* 🔧 Garante que o conteúdo fique abaixo do menu */
+main,
+.section,
+.content {
+  position: relative;
+  z-index: 1;
+}
