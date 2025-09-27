@@ -45,3 +45,14 @@ body.dark footer {
     font-size: 1rem;
   }
 }
+
+/* 🌘 Links no rodapé no modo escuro */
+body.dark footer nav a {
+  color: #f5f5f5;
+  transition: color 0.3s ease;
+}
+
+body.dark footer nav a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
