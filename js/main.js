@@ -40,7 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault(); // Impede envio real
 
       // Exibe o modal imediatamente
-      modal.style.display = "flex";
+      modal.classList.add("show");
+      modal.classList.remove("show");
 
       // Envia via FormSubmit com cabeçalho para evitar redirecionamento
       fetch("https://formsubmit.co/eduachou@gmail.com", {
