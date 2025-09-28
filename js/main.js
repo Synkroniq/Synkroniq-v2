@@ -38,11 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (form && modal && closeBtn) {
     form.addEventListener("submit", function (e) {
       e.preventDefault(); // Impede envio real
-
-      // Exibe o modal imediatamente
-      modal.classList.add("show");
       
-
       // Envia via FormSubmit com cabeçalho para evitar redirecionamento
       fetch("https://formsubmit.co/eduachou@gmail.com", {
         method: "POST",
@@ -57,6 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
+      // Exibe o modal imediatamente
+      modal.classList.add("show");
     // Fecha o modal ao clicar no botão ou fora dele
 closeBtn.addEventListener("click", () => modal.classList.remove("show"));
 window.addEventListener("click", (e) => {
