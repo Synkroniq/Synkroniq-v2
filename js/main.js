@@ -16,16 +16,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggleBtn = document.querySelector('.menu-toggle');
     const menu = document.getElementById('mainMenu');
 
+    // Só ativa se os elementos estiverem presentes
     if (toggleBtn && menu) {
       toggleBtn.addEventListener('click', toggleMenu);
+
       menu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => menu.classList.remove('active'));
       });
+
       document.addEventListener('click', closeMenuOnOutsideClick);
+
+      console.log("Menu sanduíche ativado com sucesso");
       observer.disconnect(); // Para de observar após configurar
     }
   });
 
+  // Observa mudanças no conteúdo do header
   observer.observe(headerContainer, { childList: true, subtree: true });
 
   // Registro do Service Worker
