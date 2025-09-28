@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let index = 0;
   let intervalo;
   let touchStartX = 0;
+  let isPaused = false;
 
   // Cria bolinhas
   slides.forEach((_, i) => {
@@ -16,9 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (i === index) bolinha.classList.add("ativa");
 
     bolinha.addEventListener("click", () => {
-      clearInterval(intervalo);
+      pauseCarrossel();
       mostrarSlide(i);
-      setTimeout(iniciarCarrossel, 7000);
+      resumeCarrossel();
     });
 
     indicadoresContainer.appendChild(bolinha);
@@ -55,37 +56,51 @@ document.addEventListener("DOMContentLoaded", () => {
     mostrarSlide(index);
   }
 
-  document.getElementById("btn-esq").addEventListener("click", () => {
+  function iniciarCarrossel() {
     clearInterval(intervalo);
+    intervalo = setInterval(() => {
+      if (!isPaused) proximoSlide();
+    }, 5000);
+  }
+
+  function pauseCarrossel() {
+    isPaused = true;
+    clearInterval(intervalo);
+  }
+
+  function resumeCarrossel() {
+    isPaused = false;
+    iniciarCarrossel();
+  }
+
+  document.getElementById("btn-esq").addEventListener("click", () => {
+    pauseCarrossel();
     anteriorSlide();
-    setTimeout(iniciarCarrossel, 7000);
+    resumeCarrossel();
   });
 
   document.getElementById("btn-dir").addEventListener("click", () => {
-    clearInterval(intervalo);
+    pauseCarrossel();
     proximoSlide();
-    setTimeout(iniciarCarrossel, 7000);
+    resumeCarrossel();
   });
 
   // Swipe horizontal
   carrosselEl.addEventListener("touchstart", e => {
     touchStartX = e.changedTouches[0].screenX;
-  });
+    pauseCarrossel();
+  }, { passive: true });
 
   carrosselEl.addEventListener("touchend", e => {
     const touchEndX = e.changedTouches[0].screenX;
     const diff = touchStartX - touchEndX;
 
     if (Math.abs(diff) > 50) {
-      clearInterval(intervalo);
       diff > 0 ? proximoSlide() : anteriorSlide();
-      setTimeout(iniciarCarrossel, 7000);
     }
-  });
 
-  function iniciarCarrossel() {
-    intervalo = setInterval(proximoSlide, 5000);
-  }
+    resumeCarrossel();
+  }, { passive: true });
 
   mostrarSlide(index);
   iniciarCarrossel();
