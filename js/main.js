@@ -4,9 +4,10 @@ import { loadComponent } from './loader.js';
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Synkroniq 2.0 iniciado");
 
-  loadComponent("header-container", "/Synkroniq-v2/components/header.html");
-  loadComponent("footer-container", "/Synkroniq-v2/components/footer.html");
-  loadComponent("card-servico-container", "/Synkroniq-v2/components/card-servico.html");
+  loadComponent("header-container", "components/header.html");
+  loadComponent("footer-container", "components/footer.html");
+  loadComponent("card-servico-container", "components/card-servico.html");
+
 
   requestAnimationFrame(() => {
     const toggleBtn = document.querySelector('.menu-toggle');
