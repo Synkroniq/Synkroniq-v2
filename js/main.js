@@ -9,8 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
   loadComponent("footer-container", "components/footer.html");
   loadComponent("card-servico-container", "components/card-servico.html");
 
-  // Configuração do menu sanduíche
-  requestAnimationFrame(() => {
+  // Observa quando o header é carregado para ativar o menu sanduíche
+  const headerContainer = document.getElementById("header-container");
+
+  const observer = new MutationObserver(() => {
     const toggleBtn = document.querySelector('.menu-toggle');
     const menu = document.getElementById('mainMenu');
 
@@ -20,8 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
         link.addEventListener('click', () => menu.classList.remove('active'));
       });
       document.addEventListener('click', closeMenuOnOutsideClick);
+      observer.disconnect(); // Para de observar após configurar
     }
   });
+
+  observer.observe(headerContainer, { childList: true, subtree: true });
 
   // Registro do Service Worker
   if ("serviceWorker" in navigator) {
@@ -38,7 +43,10 @@ document.addEventListener("DOMContentLoaded", () => {
   if (form && modal && closeBtn) {
     form.addEventListener("submit", function (e) {
       e.preventDefault(); // Impede envio real
-      
+
+      // Exibe o modal imediatamente
+      modal.classList.add("show");
+
       // Envia via FormSubmit com cabeçalho para evitar redirecionamento
       fetch("https://formsubmit.co/eduachou@gmail.com", {
         method: "POST",
@@ -53,12 +61,10 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-      // Exibe o modal imediatamente
-      modal.classList.add("show");
     // Fecha o modal ao clicar no botão ou fora dele
-closeBtn.addEventListener("click", () => modal.classList.remove("show"));
-window.addEventListener("click", (e) => {
-  if (e.target === modal) modal.classList.remove("show");
+    closeBtn.addEventListener("click", () => modal.classList.remove("show"));
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) modal.classList.remove("show");
     });
   }
 });
