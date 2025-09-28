@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Exibe o modal imediatamente
       modal.classList.add("show");
-      modal.classList.remove("show");
+      
 
       // Envia via FormSubmit com cabeçalho para evitar redirecionamento
       fetch("https://formsubmit.co/eduachou@gmail.com", {
@@ -58,9 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Fecha o modal ao clicar no botão ou fora dele
-    closeBtn.addEventListener("click", () => modal.style.display = "none");
-    window.addEventListener("click", (e) => {
-      if (e.target === modal) modal.style.display = "none";
+closeBtn.addEventListener("click", () => modal.classList.remove("show"));
+window.addEventListener("click", (e) => {
+  if (e.target === modal) modal.classList.remove("show");
     });
   }
 });
