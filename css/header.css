@@ -6,6 +6,7 @@
   flex-wrap: wrap;
   gap: 1rem;
   padding: 1rem 0;
+  position: relative; /* necessário para posicionar o menu corretamente */
 }
 
 /* 🏷️ Logo principal */
@@ -89,16 +90,19 @@ body.dark #toggle-dark {
     flex-direction: column;
     background-color: #fff;
     position: absolute;
-    top: 60px;
-    right: 1rem;
-    width: 200px;
+    top: 100%;
+    right: 0;
+    width: 100%;
     padding: 1rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
 
   .menu.active {
     display: flex;
+    opacity: 1;
   }
 
   .menu ul {
