@@ -9,30 +9,36 @@ document.addEventListener("DOMContentLoaded", () => {
   loadComponent("footer-container", "components/footer.html");
   loadComponent("card-servico-container", "components/card-servico.html");
 
-  // Observa quando o header é carregado para ativar o menu sanduíche
-  const headerContainer = document.getElementById("header-container");
-
-  const observer = new MutationObserver(() => {
+  // Função que ativa o menu sanduíche
+  function ativarMenuSanduiche() {
     const toggleBtn = document.querySelector('.menu-toggle');
     const menu = document.getElementById('mainMenu');
 
-    // Só ativa se os elementos estiverem presentes
     if (toggleBtn && menu) {
       toggleBtn.addEventListener('click', toggleMenu);
-
       menu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => menu.classList.remove('active'));
       });
-
       document.addEventListener('click', closeMenuOnOutsideClick);
-
       console.log("Menu sanduíche ativado com sucesso");
-      observer.disconnect(); // Para de observar após configurar
+      return true;
     }
+    return false;
+  }
+
+  // Observa quando o header é carregado
+  const headerContainer = document.getElementById("header-container");
+  const observer = new MutationObserver(() => {
+    if (ativarMenuSanduiche()) observer.disconnect();
   });
 
-  // Observa mudanças no conteúdo do header
   observer.observe(headerContainer, { childList: true, subtree: true });
+
+  // Fallback: ativa o menu se já estiver presente (ex: header estático)
+  setTimeout(() => {
+    if (!document.querySelector('.menu-toggle')) return;
+    ativarMenuSanduiche();
+  }, 500);
 
   // Registro do Service Worker
   if ("serviceWorker" in navigator) {
@@ -48,17 +54,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (form && modal && closeBtn) {
     form.addEventListener("submit", function (e) {
-      e.preventDefault(); // Impede envio real
-
-      // Exibe o modal imediatamente
+      e.preventDefault();
       modal.classList.add("show");
 
-      // Envia via FormSubmit com cabeçalho para evitar redirecionamento
       fetch("https://formsubmit.co/eduachou@gmail.com", {
         method: "POST",
-        headers: {
-          Accept: "application/json"
-        },
+        headers: { Accept: "application/json" },
         body: new FormData(form)
       }).then(() => {
         form.reset();
@@ -67,7 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // Fecha o modal ao clicar no botão ou fora dele
     closeBtn.addEventListener("click", () => modal.classList.remove("show"));
     window.addEventListener("click", (e) => {
       if (e.target === modal) modal.classList.remove("show");
