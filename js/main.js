@@ -39,16 +39,18 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", function (e) {
       e.preventDefault(); // Impede envio real
 
-        // Exibe o modal imediatamente
-  modal.style.display = "flex";
+      // Exibe o modal imediatamente
+      modal.style.display = "flex";
 
-      // Envia via FormSubmit
+      // Envia via FormSubmit com cabeçalho para evitar redirecionamento
       fetch("https://formsubmit.co/eduachou@gmail.com", {
         method: "POST",
+        headers: {
+          Accept: "application/json"
+        },
         body: new FormData(form)
       }).then(() => {
         form.reset();
-     
       }).catch(() => {
         alert("Erro ao enviar. Tente novamente.");
       });
