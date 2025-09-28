@@ -5,10 +5,10 @@ self.addEventListener("install", event => {
   event.waitUntil(
     caches.open("synkroniq-cache").then(cache => {
       return cache.addAll([
-        "/",
-        "/index.html",
-        "/css/base.css",
-        "/js/main.js"
+        "./",
+        "./index.html",
+        "./css/base.css",
+        "./js/main.js"
       ]);
     })
   );
@@ -23,7 +23,13 @@ self.addEventListener("activate", event => {
 self.addEventListener("fetch", event => {
   event.respondWith(
     caches.match(event.request).then(response => {
-      return response || fetch(event.request);
+      return response || fetch(event.request).then(networkResponse => {
+      console.log("Service Worker interceptando:", event.request.url);
+        return caches.open("synkroniq-cache").then(cache => {
+          cache.put(event.request, networkResponse.clone());
+          return networkResponse;
+        });
+      });
     })
   );
 });
