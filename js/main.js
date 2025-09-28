@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault(); // Impede envio real
 
       // Envia via FormSubmit
-      fetch("https://formsubmit.co/seuemail@gmail.com", {
+      fetch("https://formsubmit.co/eduachou@gmail.com", {
         method: "POST",
         body: new FormData(form)
       }).then(() => {
