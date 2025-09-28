@@ -33,7 +33,14 @@
 
   <main role="main" aria-label="Formulário de contato" style="padding: 2rem;">
     <h2>Entre em contato</h2>
-    <form action="#" method="post">
+    <form action="https://formsubmit.co/eduachou@gmail.com" method="post">
+      <!-- Proteção contra spam -->
+    <input type="text" name="_honey" style="display:none">
+
+    <!-- Redirecionamento após envio (opcional) -->
+    <input type="hidden" name="_next" value="https://synkroniq.com.br/obrigado.html">
+    <input type="hidden" name="_captcha" value="false">
+
       <label for="nome">Nome:</label><br />
       <input type="text" id="nome" name="nome" required /><br /><br />
 
