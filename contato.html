@@ -78,6 +78,7 @@ body.dark .modal-content {
   <form id="contato-form">
       <!-- Proteção contra spam -->
     <input type="text" name="_honey" style="display:none">
+    <input type="hidden" name="_redirect" value="false">
 
     <!-- Redirecionamento após envio (opcional) -->
     <input type="hidden" name="_captcha" value="false">
@@ -105,9 +106,6 @@ body.dark .modal-content {
   <!-- Rodapé dinâmico -->
   <div id="footer-container"></div>
 
-  <!-- Scripts -->
-  <script type= "module" src="js/main.js"></script>
-  <script src="js/darkmode.js"></script>
 <div id="modal-obrigado" class="modal">
   <div class="modal-content">
     <span class="close-btn">&times;</span>
@@ -116,5 +114,8 @@ body.dark .modal-content {
   </div>
 </div>
   
+  <!-- Scripts -->
+  <script type= "module" src="js/main.js"></script>
+  <script src="js/darkmode.js"></script>
 </body>
 </html>
