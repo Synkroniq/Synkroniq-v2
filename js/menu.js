@@ -8,12 +8,15 @@ export function toggleMenu() {
 export function closeMenuOnOutsideClick(e) {
   const menu = document.getElementById('mainMenu');
   const toggleBtn = document.querySelector('.menu-toggle');
-  if (
-    menu &&
-    menu.classList.contains('active') &&
-    !menu.contains(e.target) &&
-    !toggleBtn.contains(e.target)
-  ) {
+
+  // Protege contra cliques em elementos inexistentes
+  if (!menu || !toggleBtn) return;
+
+  const clickedInsideMenu = menu.contains(e.target);
+  const clickedToggleBtn = toggleBtn.contains(e.target);
+
+  // Fecha o menu se estiver aberto e o clique for fora
+  if (menu.classList.contains('active') && !clickedInsideMenu && !clickedToggleBtn) {
     menu.classList.remove('active');
   }
 }
