@@ -1,4 +1,4 @@
-import { toggleMenu, closeMenuOnOutsideClick } from './menu.js';
+import { toggleMenu, closeMenuOnOutsideClick, closeMenuOnLinkClick } from './menu.js';
 import { loadComponent } from './loader.js';
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -16,10 +16,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (toggleBtn && menu) {
       toggleBtn.addEventListener('click', toggleMenu);
+
+      // Fecha o menu ao clicar em qualquer link
       menu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => menu.classList.remove('active'));
+        link.addEventListener('click', closeMenuOnLinkClick);
       });
+
+      // Fecha o menu ao clicar fora
       document.addEventListener('click', closeMenuOnOutsideClick);
+
       console.log("Menu sanduíche ativado com sucesso");
       return true;
     }
@@ -34,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   observer.observe(headerContainer, { childList: true, subtree: true });
 
-  // Fallback: ativa o menu se já estiver presente (ex: header estático)
+  // Fallback: ativa o menu se já estiver presente
   setTimeout(() => {
     if (!document.querySelector('.menu-toggle')) return;
     ativarMenuSanduiche();
