@@ -20,3 +20,11 @@ export function closeMenuOnOutsideClick(e) {
     document.body.classList.remove('menu-open');
   }
 }
+
+export function closeMenuOnLinkClick() {
+  const menu = document.getElementById('mainMenu');
+  if (menu && menu.classList.contains('active')) {
+    menu.classList.remove('active');
+    document.body.classList.remove('menu-open');
+  }
+}
