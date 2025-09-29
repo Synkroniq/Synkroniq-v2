@@ -108,6 +108,11 @@ body.dark #toggle-dark {
     color: #00FFAA;
   }
 
+  /* ✅ Oculta o botão ☰ quando o menu está aberto */
+  body.menu-open .menu-toggle {
+    display: none;
+  }
+
   .menu {
     flex-direction: column;
     background-color: #fff;
@@ -137,9 +142,4 @@ body.dark #toggle-dark {
   #toggle-dark {
     margin: 1rem auto 0;
   }
-}
-
-.menu.active + #toggle-dark,
-.menu.active ~ .menu-toggle {
-  display: none;
 }
