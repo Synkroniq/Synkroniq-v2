@@ -138,3 +138,8 @@ body.dark #toggle-dark {
     margin: 1rem auto 0;
   }
 }
+
+.menu.active + #toggle-dark,
+.menu.active ~ .menu-toggle {
+  display: none;
+}
