@@ -6,7 +6,7 @@
   flex-wrap: wrap;
   gap: 1rem;
   padding: 1rem 0;
-  position: relative; /* necessário para posicionar o menu corretamente */
+  position: relative;
 }
 
 /* 🏷️ Logo principal */
@@ -102,27 +102,31 @@ body.dark #toggle-dark {
     border: none;
     cursor: pointer;
     color: #007BFF;
+    z-index: 2100;
   }
 
   body.dark .menu-toggle {
     color: #00FFAA;
   }
 
-  /* ✅ Oculta o botão ☰ quando o menu está aberto */
+  /* Oculta o botão ☰ quando o menu está aberto */
   body.menu-open .menu-toggle {
     display: none;
   }
 
   .menu {
-    flex-direction: column;
-    background-color: #fff;
-    position: absolute;
-    top: 60px;
-    right: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 1rem;
+    height: 100vh;
+    background-color: #fff;
+    padding: 2rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    z-index: 1000;
+    z-index: 2000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .menu.active {
@@ -132,7 +136,7 @@ body.dark #toggle-dark {
 
   .menu ul {
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   body.dark .menu {
