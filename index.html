@@ -38,32 +38,34 @@
 
   <main class="container" role="main">
     <section id="carrossel" aria-label="Destaques promocionais">
-      <!-- Botões de navegação -->
-      <button class="nav-btn left" id="btn-esq" aria-label="Slide anterior">&#10094;</button>
-      <button class="nav-btn right" id="btn-dir" aria-label="Próximo slide">&#10095;</button>
+  <!-- Botões de navegação -->
+  <button class="nav-btn left" id="btn-esq" aria-label="Slide anterior">&#10094;</button>
+  <button class="nav-btn right" id="btn-dir" aria-label="Próximo slide">&#10095;</button>
 
-      <!-- Slides -->
-      <div class="slide ativo" aria-hidden="false">
-        <h2>Promoção relâmpago</h2>
-        <p>Kit técnico com 20% off até <span id="timer"></span></p>
-        <div class="progress-bar"></div>
-      </div>
+  <!-- Container de slides -->
+  <div class="carousel-track">
+    <div class="slide ativo">
+      <h2>Promoção relâmpago</h2>
+      <p>Kit técnico com 20% off até <span id="timer"></span></p>
+      <div class="progress-bar"></div>
+    </div>
 
-      <div class="slide" aria-hidden="true">
-        <h2>Upgrade Personalizado</h2>
-        <p>Monte seu setup com consultoria técnica exclusiva</p>
-        <div class="progress-bar"></div>
-      </div>
+    <div class="slide">
+      <h2>Upgrade Personalizado</h2>
+      <p>Monte seu setup com consultoria técnica exclusiva</p>
+      <div class="progress-bar"></div>
+    </div>
 
-      <div class="slide" aria-hidden="true">
-        <h2>Serviços Profissionais</h2>
-        <p>Formatação, otimização e instalação com agendamento via WhatsApp</p>
-        <div class="progress-bar"></div>
-      </div>
+    <div class="slide">
+      <h2>Serviços Profissionais</h2>
+      <p>Formatação, otimização e instalação com agendamento via WhatsApp</p>
+      <div class="progress-bar"></div>
+    </div>
+  </div>
 
-      <!-- Indicadores -->
-      <div class="indicadores" id="indicadores"></div>
-    </section>
+  <!-- Indicadores -->
+  <div class="indicadores" id="indicadores"></div>
+</section>
   </main>
 
   <!-- Rodapé dinâmico -->
