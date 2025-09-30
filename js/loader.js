@@ -3,7 +3,7 @@ export async function loadComponent(id, path) {
   if (!container) return;
 
   try {
-    const response = await fetch(path, { cache: "no-store" }); // 👈 força novo carregamento
+    const response = await fetch(path, { cache: "no-store" }); // força novo carregamento
     if (!response.ok) throw new Error(`Erro ao carregar ${path}: ${response.status}`);
     const html = await response.text();
     container.innerHTML = html;
