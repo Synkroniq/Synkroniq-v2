@@ -1,16 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contato-form");
-  const modal = document.getElementById("modal-obrigado");
-  const closeBtn = document.querySelector(".close-btn");
+  const toast = document.getElementById("toast-sucesso");
+  const closeToast = document.querySelector(".close-toast");
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
     const dados = new FormData(form);
 
-    // Substitua pelo seu endpoint real do Formspree ou outro serviço
     fetch(form.action, {
-      method: "POST",
+      method: form.method,
       body: dados,
       headers: {
         Accept: "application/json"
@@ -18,8 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .then(response => {
       if (response.ok) {
-        modal.classList.add("show");
+        toast.classList.add("show");
         form.reset();
+
+        setTimeout(() => {
+          toast.classList.remove("show");
+        }, 5000);
       } else {
         alert("Erro ao enviar. Tente novamente.");
       }
@@ -29,14 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  closeBtn.addEventListener("click", () => {
-    modal.classList.remove("show");
-  });
-
-  // Fecha modal ao clicar fora dele
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.classList.remove("show");
-    }
+  closeToast.addEventListener("click", () => {
+    toast.classList.remove("show");
   });
 });
