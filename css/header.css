@@ -147,3 +147,10 @@ body.dark #toggle-dark {
     margin: 1rem auto 0;
   }
 }
+
+@media (min-width: 769px) {
+  .menu {
+    visibility: visible;
+    opacity: 1;
+  }
+}
