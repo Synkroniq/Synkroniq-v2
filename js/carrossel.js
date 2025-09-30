@@ -31,13 +31,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     slides.forEach((slide, idx) => {
-      slide.classList.remove("ativo");
+      slide.classList.remove("ativo", "prev", "next");
       slide.setAttribute("aria-hidden", "true");
+
+      if (idx === i) {
+        slide.classList.add("ativo");
+        slide.removeAttribute("aria-hidden");
+      } else if (idx === i - 1 || (i === 0 && idx === slides.length - 1)) {
+        slide.classList.add("prev");
+      } else if (idx === i + 1 || (i === slides.length - 1 && idx === 0)) {
+        slide.classList.add("next");
+      }
     });
 
-    slides[i].classList.add("ativo");
-    slides[i].removeAttribute("aria-hidden");
-
+    // Reinicia animação da barra de progresso
     document.querySelectorAll(".progress-bar").forEach(barra => {
       const clone = barra.cloneNode(true);
       barra.parentNode.replaceChild(clone, barra);
