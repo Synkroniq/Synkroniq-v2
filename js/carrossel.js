@@ -6,9 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!timerEl || !carrosselEl) return;
 
   let index = 0;
-  let intervalo;
+  let intervalo = null;
   let touchStartX = 0;
-  let isPaused = false;
 
   // Cria bolinhas
   slides.forEach((_, i) => {
@@ -17,17 +16,17 @@ document.addEventListener("DOMContentLoaded", () => {
     if (i === index) bolinha.classList.add("ativa");
 
     bolinha.addEventListener("click", () => {
-      pauseCarrossel();
       mostrarSlide(i);
-      resumeCarrossel();
+      reiniciarCarrossel();
     });
 
     indicadoresContainer.appendChild(bolinha);
   });
 
   function mostrarSlide(i) {
-    const bolinhas = document.querySelectorAll(".bolinha");
-    bolinhas.forEach((b, idx) => {
+    index = i;
+
+    document.querySelectorAll(".bolinha").forEach((b, idx) => {
       b.classList.toggle("ativa", idx === i);
     });
 
@@ -39,56 +38,45 @@ document.addEventListener("DOMContentLoaded", () => {
     slides[i].classList.add("ativo");
     slides[i].removeAttribute("aria-hidden");
 
-    const barras = document.querySelectorAll(".progress-bar");
-    barras.forEach(barra => {
+    document.querySelectorAll(".progress-bar").forEach(barra => {
       const clone = barra.cloneNode(true);
       barra.parentNode.replaceChild(clone, barra);
     });
   }
 
   function proximoSlide() {
-    index = (index + 1) % slides.length;
-    mostrarSlide(index);
+    const novoIndex = (index + 1) % slides.length;
+    mostrarSlide(novoIndex);
   }
 
   function anteriorSlide() {
-    index = (index - 1 + slides.length) % slides.length;
-    mostrarSlide(index);
+    const novoIndex = (index - 1 + slides.length) % slides.length;
+    mostrarSlide(novoIndex);
   }
 
   function iniciarCarrossel() {
-    clearInterval(intervalo);
-    intervalo = setInterval(() => {
-      if (!isPaused) proximoSlide();
-    }, 5000);
+    intervalo = setInterval(proximoSlide, 5000);
   }
 
-  function pauseCarrossel() {
-    isPaused = true;
+  function reiniciarCarrossel() {
     clearInterval(intervalo);
-  }
-
-  function resumeCarrossel() {
-    isPaused = false;
     iniciarCarrossel();
   }
 
   document.getElementById("btn-esq").addEventListener("click", () => {
-    pauseCarrossel();
     anteriorSlide();
-    resumeCarrossel();
+    reiniciarCarrossel();
   });
 
   document.getElementById("btn-dir").addEventListener("click", () => {
-    pauseCarrossel();
     proximoSlide();
-    resumeCarrossel();
+    reiniciarCarrossel();
   });
 
   // Swipe horizontal
   carrosselEl.addEventListener("touchstart", e => {
     touchStartX = e.changedTouches[0].screenX;
-    pauseCarrossel();
+    clearInterval(intervalo);
   }, { passive: true });
 
   carrosselEl.addEventListener("touchend", e => {
@@ -99,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
       diff > 0 ? proximoSlide() : anteriorSlide();
     }
 
-    resumeCarrossel();
+    reiniciarCarrossel();
   }, { passive: true });
 
   mostrarSlide(index);
