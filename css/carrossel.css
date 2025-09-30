@@ -162,3 +162,41 @@ body.dark .indicadores .bolinha.ativa {
   from { transform: translateX(-100%); }
   to { transform: translateX(0); }
 }
+
+@media (max-width: 768px) {
+  .carousel-track {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .slide {
+    flex: 0 0 100%;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .slide.ativo {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .slide.prev,
+  .slide.next {
+    display: none;
+  }
+
+  #carrossel .nav-btn {
+    top: auto;
+    bottom: 10px;
+    transform: none;
+  }
+
+  #carrossel .nav-btn.left {
+    left: 20px;
+  }
+
+  #carrossel .nav-btn.right {
+    right: 20px;
+  }
+}
