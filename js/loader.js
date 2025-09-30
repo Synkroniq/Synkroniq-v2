@@ -1,12 +1,16 @@
-export async function loadComponent(id, path) {
+export async function loadComponent(id, path, callback) {
   const container = document.getElementById(id);
   if (!container) return;
 
   try {
-    const response = await fetch(path, { cache: "no-store" }); // força novo carregamento
+    const response = await fetch(path, { cache: "no-store" });
     if (!response.ok) throw new Error(`Erro ao carregar ${path}: ${response.status}`);
     const html = await response.text();
     container.innerHTML = html;
+
+    if (typeof callback === "function") {
+      callback(); // ✅ ativa o menu após carregar
+    }
   } catch (err) {
     console.error(`Falha ao carregar componente ${path}:`, err);
     container.innerHTML = `
