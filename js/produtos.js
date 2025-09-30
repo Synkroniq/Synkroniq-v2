@@ -31,7 +31,7 @@ fetch("data/produtos.json")
         <p>${produto.descricao}</p>
         <p class="preco">${produto.preco}</p>
         <p class="expira">Expira em ${dias} dias</p>
-        <a href="https://wa.me/55XXXXXXXXXX?text=Quero%20comprar%20o%20${encodeURIComponent(produto.nome)}" target="_blank">Comprar via WhatsApp</a>
+        <a href="https://wa.me/554497648490?text=Quero%20comprar%20o%20${encodeURIComponent(produto.nome)}" target="_blank">Comprar via WhatsApp</a>
       `;
 
       vitrine.appendChild(card);
