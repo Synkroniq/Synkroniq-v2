@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("Synkroniq 2.0 iniciado");
 
   // Carregamento dos componentes dinâmicos
-  loadComponent("header-container", "components/header.html");
+  loadComponent("header-container", "components/header.html", ativarMenuSanduiche);
   loadComponent("footer-container", "components/footer.html");
   loadComponent("card-servico-container", "components/card-servico.html");
 
