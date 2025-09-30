@@ -6,14 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const dados = new FormData(form);
+    const dados = new URLSearchParams(new FormData(form));
 
     fetch(form.action, {
       method: form.method,
-      body: dados,
       headers: {
-        Accept: "application/json"
-      }
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Accept": "application/json"
+      },
+      body: dados
     })
     .then(response => {
       if (response.ok) {
