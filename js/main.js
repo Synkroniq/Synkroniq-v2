@@ -29,23 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return false;
   }
 
-  // Observa quando o header é carregado
-  const headerContainer = document.getElementById("header-container");
-  const observer = new MutationObserver(() => {
-    if (ativarMenuSanduiche()) observer.disconnect();
-  });
-
-  observer.observe(headerContainer, { childList: true, subtree: true });
-
-  // Fallback reforçado: tenta ativar o menu após 1 segundo
-  setTimeout(() => {
-    if (document.querySelector('.menu-toggle')) {
-      ativarMenuSanduiche();
-    } else {
-      console.warn("Menu sanduíche não encontrado após timeout");
-    }
-  }, 1000);
-
   // Registro do Service Worker
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/Synkroniq-v2/service-worker.js")
