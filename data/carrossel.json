@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ssd-nvme",
+    "titulo": "SSD NVMe 1TB",
+    "descricao": "De R$399 por R$299 até às 23h59",
+    "imagem": "img/ssd-nvme.jpg",
+    "link": "produtos.html#ssd-nvme",
+    "categoria": "produtos",
+    "urgente": true
+  },
+  {
+    "id": "kit-tecnico",
+    "titulo": "Kit Técnico SV2",
+    "descricao": "20% off + frete grátis",
+    "imagem": "img/kit-tecnico.jpg",
+    "link": "produtos.html#kit-tecnico",
+    "categoria": "produtos",
+    "urgente": false
+  },
+  {
+    "id": "consultoria",
+    "titulo": "Consultoria Técnica",
+    "descricao": "Monte seu setup ideal com ajuda profissional",
+    "imagem": "img/consultoria.jpg",
+    "link": "upgrades.html#consultoria",
+    "categoria": "upgrades",
+    "urgente": false
+  },
+  {
+    "id": "windows11",
+    "titulo": "Upgrade para Windows 11 Pro",
+    "descricao": "Licença + instalação remota",
+    "imagem": "img/windows11.jpg",
+    "link": "upgrades.html#windows11",
+    "categoria": "upgrades",
+    "urgente": true
+  }
+]
