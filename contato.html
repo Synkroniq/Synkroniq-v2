@@ -12,6 +12,40 @@
   <link rel="stylesheet" href="css/header.css" />
   <link rel="stylesheet" href="css/footer.css" />
 
+  <!-- Toast CSS -->
+  <style>
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background-color: #25D366;
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      transform: translateY(20px);
+      z-index: 9999;
+    }
+
+    .toast.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .toast .close-toast {
+      margin-left: 1rem;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+  </style>
+
   <!-- PWA -->
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#007BFF" />
@@ -20,57 +54,6 @@
   <noscript>
     <style>
       .container { display: none; }
-
-      .modal {
-  display: none;
-  position: fixed;
-  z-index: 2000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-      .modal.show {
-  display: flex;
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.modal-content {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  max-width: 500px;
-  text-align: center;
-  position: relative;
-  animation: fadeIn 0.4s ease-in-out;
-}
-
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-      
-  @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
-  }
-      
-body.dark .modal-content {
-  background: #1c1c1c;
-  color: #f5f5f5;
-}
-      
     </style>
     <p style="text-align:center; padding:1rem; background:#ffdddd;">
       Este site requer JavaScript para funcionar corretamente.
@@ -84,13 +67,11 @@ body.dark .modal-content {
 
   <main role="main" aria-label="Formulário de contato" style="padding: 2rem;">
     <h2>Entre em contato</h2>
-  <form id="contato-form">
+    <form id="contato-form" action="https://formsubmit.co/seu@email.com" method="POST">
       <!-- Proteção contra spam -->
-    <input type="text" name="_honey" style="display:none">
-    <input type="hidden" name="_redirect" value="false">
-
-    <!-- Redirecionamento após envio (opcional) -->
-    <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none">
+      <input type="hidden" name="_redirect" value="false">
+      <input type="hidden" name="_captcha" value="false">
 
       <label for="nome">Nome:</label><br />
       <input type="text" id="nome" name="nome" required /><br /><br />
@@ -107,23 +88,21 @@ body.dark .modal-content {
     <h3>Outros canais</h3>
     <ul>
       <li><a href="https://wa.me/5544997648490" target="_blank" rel="noopener">WhatsApp Comercial</a></li>
-      <!-- <li><a href="mailto:contato@synkroniq.com.br">Email: contato@synkroniq.com.br</a></li> -->
       <li><a href="https://www.instagram.com/synkroniq.tech" target="_blank" rel="noopener">Instagram</a></li>
     </ul>
   </main>
 
-<div id="modal-obrigado" class="modal">
-  <div class="modal-content">
-    <span class="close-btn">&times;</span>
-    <h2>Obrigado pelo contato!</h2>
-    <p>Sua mensagem foi enviada com sucesso. Em breve nossa equipe entrará em contato com você.</p>
+  <!-- Toast de sucesso -->
+  <div id="toast-sucesso" class="toast">
+    <p>Sua mensagem foi enviada com sucesso!</p>
+    <span class="close-toast">&times;</span>
   </div>
-</div>
-  
+
   <!-- Rodapé dinâmico -->
   <div id="footer-container"></div>
+
   <!-- Scripts -->
-  <script type= "module" src="js/main.js"></script>
+  <script type="module" src="js/main.js"></script>
   <script src="js/darkmode.js"></script>
   <script src="js/contato.js"></script>
 </body>
