@@ -27,7 +27,7 @@ fetch("data/servicos.json")
         <h3>${servico.nome}</h3>
         <p>${servico.descricao}</p>
         <p class="preco">${servico.preco}</p>
-        <a href="https://wa.me/55XXXXXXXXXX?text=${encodeURIComponent(mensagem)}" target="_blank">Agendar via WhatsApp</a>
+        <a href="https://wa.me/5544997648490?text=${encodeURIComponent(mensagem)}" target="_blank">Agendar via WhatsApp</a>
       `;
 
       lista.appendChild(card);
