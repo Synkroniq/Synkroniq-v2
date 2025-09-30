@@ -1,25 +1,40 @@
 #carrossel {
   position: relative;
   overflow: hidden;
-  height: 250px;
   background-color: #f0f0f0;
+  padding: 2rem 0;
   transition: background-color 0.3s ease;
 }
 
-/* Modo escuro */
 body.dark #carrossel {
   background-color: #1a1a1a;
 }
 
-.slide {
-  display: none;
-  padding: 2rem;
-  text-align: center;
-  transition: color 0.3s ease;
+/* Container de slides */
+.carousel-track {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.5s ease;
 }
 
-.slide.ativo {
-  display: block;
+/* Slide base */
+.slide {
+  flex: 0 0 60%;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  background-color: white;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  pointer-events: none;
+}
+
+body.dark .slide {
+  background-color: #2a2a2a;
 }
 
 .slide h2 {
@@ -34,7 +49,6 @@ body.dark #carrossel {
   transition: color 0.3s ease;
 }
 
-/* Modo escuro */
 body.dark .slide p {
   color: #ccc;
 }
@@ -43,6 +57,24 @@ body.dark .slide h2 {
   color: #66B2FF;
 }
 
+/* Slide ativo */
+.slide.ativo {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+  z-index: 2;
+}
+
+/* Slides anterior e posterior */
+.slide.prev,
+.slide.next {
+  flex: 0 0 20%;
+  opacity: 0.5;
+  transform: scale(0.8);
+  z-index: 1;
+}
+
+/* Botões de navegação */
 #carrossel .nav-btn {
   position: absolute;
   top: 50%;
@@ -54,10 +86,10 @@ body.dark .slide h2 {
   cursor: pointer;
   font-size: 1.2rem;
   border-radius: 50%;
+  z-index: 10;
   transition: background-color 0.3s ease;
 }
 
-/* Modo escuro */
 body.dark #carrossel .nav-btn {
   background-color: #3399FF;
 }
@@ -70,33 +102,6 @@ body.dark #carrossel .nav-btn {
   right: 10px;
 }
 
-.progress-bar {
-  width: 100%;
-  height: 4px;
-  background-color: #ddd;
-  position: relative;
-  overflow: hidden;
-  margin-top: 1rem;
-}
-
-.progress-bar::before {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-color: #007BFF;
-  animation: progressAnim 5s linear forwards;
-}
-
-@keyframes progressAnim {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(0); }
-}
-
-#carrossel .nav-btn {
-  z-index: 10;
-}
-
 #carrossel .nav-btn:hover {
   background-color: #0056b3;
 }
@@ -105,6 +110,7 @@ body.dark #carrossel .nav-btn:hover {
   background-color: #007BFF;
 }
 
+/* Indicadores */
 .indicadores {
   display: flex;
   justify-content: center;
@@ -131,4 +137,28 @@ body.dark .indicadores .bolinha {
 
 body.dark .indicadores .bolinha.ativa {
   background-color: #66B2FF;
+}
+
+/* Barra de progresso */
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: #ddd;
+  position: relative;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.progress-bar::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #007BFF;
+  animation: progressAnim 5s linear forwards;
+}
+
+@keyframes progressAnim {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
 }
