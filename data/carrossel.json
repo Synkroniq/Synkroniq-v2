@@ -34,5 +34,37 @@
     "link": "upgrades.html#windows11",
     "categoria": "upgrades",
     "urgente": true
+  },
+  {
+    "id": "formata",
+    "titulo": "Formatação Profissional",
+    "descricao": "Seu PC limpo e otimizado em 24h",
+    "imagem": "img/formata.jpg",
+    "link": "servicos.html#formata",
+    "categoria": "servicos"
+  },
+  {
+    "id": "suporte",
+    "titulo": "Suporte via WhatsApp",
+    "descricao": "Diagnóstico gratuito e atendimento rápido",
+    "imagem": "img/suporte.jpg",
+    "link": "servicos.html#suporte",
+    "categoria": "servicos"
+  },
+  {
+    "id": "ssd-ideal",
+    "titulo": "Como escolher seu SSD ideal",
+    "descricao": "Descubra os tipos, velocidades e compatibilidades",
+    "imagem": "img/blog-ssd.jpg",
+    "link": "blog.html#ssd-ideal",
+    "categoria": "blog"
+  },
+  {
+    "id": "upgrade-sinais",
+    "titulo": "5 sinais de que seu PC precisa de upgrade",
+    "descricao": "Desempenho lento, travamentos e mais",
+    "imagem": "img/blog-upgrade.jpg",
+    "link": "blog.html#upgrade-sinais",
+    "categoria": "blog"
   }
 ]
