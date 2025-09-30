@@ -17,12 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (toggleBtn && menu) {
       toggleBtn.addEventListener('click', toggleMenu);
 
-      // Fecha o menu ao clicar em qualquer link
       menu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', closeMenuOnLinkClick);
       });
 
-      // Fecha o menu ao clicar fora
       document.addEventListener('click', closeMenuOnOutsideClick);
 
       console.log("Menu sanduíche ativado com sucesso");
@@ -39,11 +37,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   observer.observe(headerContainer, { childList: true, subtree: true });
 
-  // Fallback: ativa o menu se já estiver presente
+  // Fallback reforçado: tenta ativar o menu após 1 segundo
   setTimeout(() => {
-    if (!document.querySelector('.menu-toggle')) return;
-    ativarMenuSanduiche();
-  }, 500);
+    if (document.querySelector('.menu-toggle')) {
+      ativarMenuSanduiche();
+    } else {
+      console.warn("Menu sanduíche não encontrado após timeout");
+    }
+  }, 1000);
 
   // Registro do Service Worker
   if ("serviceWorker" in navigator) {
