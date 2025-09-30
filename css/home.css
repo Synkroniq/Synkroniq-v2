@@ -1,0 +1,122 @@
+/* Carrossel wrapper */
+.carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+/* Track que recebe os slides */
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: 1rem;
+}
+
+/* Slide individual */
+.slide {
+  min-width: 300px;
+  max-width: 100%;
+  background: #f5f5f5;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.slide a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding: 1rem;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  object-fit: cover;
+}
+
+/* Botões de navegação */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #007BFF;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.nav-btn.left {
+  left: 10px;
+}
+
+.nav-btn.right {
+  right: 10px;
+}
+
+/* Indicadores */
+.indicadores {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.indicadores span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.indicadores .ativo {
+  background: #007BFF;
+}
+
+/* Navegação guiada */
+.navegacao-opcoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.btn-guia {
+  background: #25D366;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-guia:hover {
+  background: #1da851;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .carousel-track {
+    flex-direction: column;
+  }
+
+  .slide {
+    min-width: 100%;
+  }
+
+  .nav-btn {
+    display: none;
+  }
+}
