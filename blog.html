@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog Técnico | Synkroniq</title>
+
+  <!-- Estilos -->
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/blog.css" />
@@ -12,15 +14,49 @@
   <link rel="stylesheet" href="css/footer.css" />
 </head>
 <body>
-<div id="header-container"></div>
 
+  <!-- Cabeçalho visual com menu integrado -->
+  <section class="cabecalho-visual">
+    <div class="fundo-cabecalho">
+      <img src="assets/img/cabecalho-blog.png" alt="Blog Técnico Synkroniq" />
+    </div>
+
+    <header class="topo fade-in">
+      <div class="container header-flex">
+        <a href="index.html" class="logo">Synkroniq<span class="tech">.tech</span></a>
+        <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+        <nav id="mainMenu" class="menu">
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="upgrade.html">Upgrade</a></li>
+            <li><a href="blog.html" class="ativo">Blog</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+        <button id="toggle-dark" title="Alternar tema"><i class="fas fa-moon"></i></button>
+      </div>
+    </header>
+
+    <div class="conteudo-cabecalho">
+      <h1>Blog Técnico</h1>
+      <p>Artigos, curiosidades e insights sobre tecnologia</p>
+    </div>
+  </section>
+
+  <!-- Conteúdo principal -->
   <main id="lista-artigos">
     <!-- Artigos serão carregados aqui -->
   </main>
 
-<div id="footer-container"></div>
+  <!-- Rodapé -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
   <script src="js/blog.js"></script>
   <script src="js/darkmode.js"></script>
-  <script type="module" src="js/main.js"></script>
+  <script src="js/menu.js"></script>
 </body>
 </html>
