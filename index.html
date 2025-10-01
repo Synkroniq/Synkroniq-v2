@@ -33,8 +33,36 @@
 </head>
 <body>
 
-  <!-- Cabeçalho dinâmico -->
-  <div id="header-container"></div>
+  <!-- Cabeçalho visual com menu integrado -->
+  <section class="cabecalho-visual">
+    <div class="fundo-cabecalho">
+      <img src="assets/img/cabecalho-home.png" alt="Synkroniq Tecnologia" />
+    </div>
+
+    <header class="topo fade-in">
+      <div class="container header-flex">
+        <a href="index.html" class="logo">Synkroniq<span class="tech">.tech</span></a>
+        <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+        <nav id="mainMenu" class="menu">
+          <ul>
+            <li><a href="index.html" class="ativo">Início</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="upgrade.html">Upgrade</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+        <button id="toggle-dark" title="Alternar tema"><i class="fas fa-moon"></i></button>
+      </div>
+    </header>
+
+    <div class="conteudo-cabecalho">
+      <h1>Tecnologia que te acompanha</h1>
+      <p>Ofertas, upgrades e curiosidades para quem vive o mundo tech</p>
+    </div>
+  </section>
 
   <main class="container" role="main">
 
@@ -67,10 +95,10 @@
   <div id="footer-container"></div>
 
   <!-- Scripts -->
-  <script type="module" src="js/main.js"></script>
   <script src="js/carrossel.js"></script>
   <script src="js/darkmode.js"></script>
   <script src="js/modal.js"></script>
   <script src="js/home.js"></script>
+  <script src="js/menu.js"></script>
 </body>
 </html>
