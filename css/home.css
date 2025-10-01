@@ -1,4 +1,4 @@
-/* Carrossel wrapper */
+/* 🎯 Carrossel wrapper */
 .carousel-wrapper {
   position: relative;
   overflow: hidden;
@@ -7,14 +7,14 @@
   margin: 2rem auto;
 }
 
-/* Track que recebe os slides */
+/* 🎯 Track que recebe os slides */
 .carousel-track {
   display: flex;
   transition: transform 0.5s ease-in-out;
   gap: 1rem;
 }
 
-/* Slide individual */
+/* 🎯 Slide individual */
 .slide {
   min-width: 300px;
   max-width: 100%;
@@ -40,7 +40,7 @@
   object-fit: cover;
 }
 
-/* Botões de navegação */
+/* 🎯 Botões de navegação */
 .nav-btn {
   position: absolute;
   top: 50%;
@@ -53,6 +53,11 @@
   cursor: pointer;
   z-index: 10;
   border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: #0056b3;
 }
 
 .nav-btn.left {
@@ -63,7 +68,7 @@
   right: 10px;
 }
 
-/* Indicadores */
+/* 🎯 Indicadores */
 .indicadores {
   text-align: center;
   margin-top: 1rem;
@@ -77,13 +82,14 @@
   background: #ccc;
   border-radius: 50%;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 .indicadores .ativo {
   background: #007BFF;
 }
 
-/* Navegação guiada */
+/* 🎯 Navegação guiada */
 .navegacao-opcoes {
   display: flex;
   flex-wrap: wrap;
@@ -106,7 +112,7 @@
   background: #1da851;
 }
 
-/* Responsivo */
+/* 📱 Responsivo */
 @media (max-width: 768px) {
   .carousel-track {
     flex-direction: column;
@@ -118,5 +124,10 @@
 
   .nav-btn {
     display: none;
+  }
+
+  .btn-guia {
+    width: 100%;
+    text-align: center;
   }
 }
