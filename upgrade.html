@@ -28,8 +28,36 @@
 </head>
 <body>
 
-  <!-- Cabeçalho dinâmico -->
-  <div id="header-container"></div>
+  <!-- Cabeçalho visual com menu integrado -->
+  <section class="cabecalho-visual">
+    <div class="fundo-cabecalho">
+      <img src="assets/img/cabecalho-upgrade.png" alt="Upgrade Synkroniq" />
+    </div>
+
+    <header class="topo fade-in">
+      <div class="container header-flex">
+        <a href="index.html" class="logo">Synkroniq<span class="tech">.tech</span></a>
+        <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+        <nav id="mainMenu" class="menu">
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="upgrade.html" class="ativo">Upgrade</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+        <button id="toggle-dark" title="Alternar tema"><i class="fas fa-moon"></i></button>
+      </div>
+    </header>
+
+    <div class="conteudo-cabecalho">
+      <h1>Upgrade Técnico</h1>
+      <p>Transforme seu setup com componentes de alto desempenho</p>
+    </div>
+  </section>
 
   <!-- Conteúdo principal -->
   <main class="container" id="lista-upgrades" role="main" aria-label="Lista de kits de upgrade técnico">
@@ -42,6 +70,6 @@
   <!-- Scripts -->
   <script src="js/upgrade.js"></script>
   <script src="js/darkmode.js"></script>
-  <script type="module" src="js/main.js"></script>
+  <script src="js/menu.js"></script>
 </body>
 </html>
