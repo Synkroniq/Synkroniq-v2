@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Produtos | Synkroniq</title>
+
+  <!-- Estilos principais -->
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/produtos.css" />
@@ -12,17 +14,40 @@
   <link rel="stylesheet" href="css/footer.css" />
 </head>
 <body>
-<div id="header-container"></div>
 
+  <!-- Cabeçalho dinâmico -->
+  <div id="header-container"></div>
 
+  <!-- Cabeçalho com imagem temática -->
+  <header class="cabecalho-produtos">
+    <div class="fundo-cabecalho">
+      <img src="assets/img/cabecalho-produtos.png" alt="Produtos Synkroniq" />
+    </div>
+    <div class="conteudo-cabecalho">
+      <h1>Produtos Synkroniq</h1>
+      <nav id="menu-principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="produtos.html" class="ativo">Produtos</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Vitrine de produtos -->
   <main id="vitrine-produtos">
-    <!-- Produtos serão carregados aqui -->
+    <!-- Produtos serão carregados aqui via JS -->
   </main>
 
-  
-<div id="footer-container"></div>
+  <!-- Rodapé dinâmico -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
   <script src="js/produtos.js"></script>
   <script src="js/darkmode.js"></script>
-<script type="module" src="js/main.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
