@@ -3,18 +3,20 @@
     "id": "s001",
     "nome": "Formatação Profissional",
     "descricao": "Limpeza completa, reinstalação de sistema e otimização.",
-    "preco": "R$ 149,00"
+    "preco": "R$ 149,00",
+    "imagem": "assets/img/formatacao.png",
+    "categoria": "Sistema",
+    "duracao": "2h",
+    "expiraEm": "2025-10-10"
   },
   {
     "id": "s002",
     "nome": "Upgrade de Hardware",
     "descricao": "Instalação de SSD, memória RAM e ajustes técnicos.",
-    "preco": "R$ 199,00"
-  },
-  {
-    "id": "s003",
-    "nome": "Consultoria Técnica",
-    "descricao": "Análise personalizada para montar ou melhorar seu setup.",
-    "preco": "R$ 99,00"
+    "preco": "R$ 199,00",
+    "imagem": "assets/img/upgrade.png",
+    "categoria": "Hardware",
+    "duracao": "1h30min",
+    "expiraEm": "2025-10-05"
   }
 ]
