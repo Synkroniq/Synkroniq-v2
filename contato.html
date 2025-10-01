@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/header.css" />
   <link rel="stylesheet" href="css/footer.css" />
   <link rel="stylesheet" href="css/contato.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <!-- Toast CSS -->
   <style>
@@ -53,9 +54,7 @@
 
   <!-- Fallback para JS desativado -->
   <noscript>
-    <style>
-      .container { display: none; }
-    </style>
+    <style>.container { display: none; }</style>
     <p style="text-align:center; padding:1rem; background:#ffdddd;">
       Este site requer JavaScript para funcionar corretamente.
     </p>
@@ -63,9 +62,38 @@
 </head>
 <body>
 
-  <!-- Cabeçalho dinâmico -->
-  <div id="header-container"></div>
+  <!-- Cabeçalho visual com menu integrado -->
+  <section class="cabecalho-visual">
+    <div class="fundo-cabecalho">
+      <img src="assets/img/cabecalho-contato.png" alt="Contato Synkroniq" />
+    </div>
 
+    <header class="topo fade-in">
+      <div class="container header-flex">
+        <a href="index.html" class="logo">Synkroniq<span class="tech">.tech</span></a>
+        <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+        <nav id="mainMenu" class="menu">
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="upgrade.html">Upgrade</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html" class="ativo">Contato</a></li>
+          </ul>
+        </nav>
+        <button id="toggle-dark" title="Alternar tema"><i class="fas fa-moon"></i></button>
+      </div>
+    </header>
+
+    <div class="conteudo-cabecalho">
+      <h1>Fale com a Synkroniq</h1>
+      <p>Estamos prontos para te atender com agilidade e clareza</p>
+    </div>
+  </section>
+
+  <!-- Conteúdo principal -->
   <main role="main" aria-label="Formulário de contato" style="padding: 2rem;">
     <h2>Entre em contato</h2>
     <form id="contato-form" action="https://formsubmit.co/eduachou@gmail.com" method="POST">
@@ -103,8 +131,8 @@
   <div id="footer-container"></div>
 
   <!-- Scripts -->
-  <script type="module" src="js/main.js"></script>
-  <script src="js/darkmode.js"></script>
   <script src="js/contato.js"></script>
+  <script src="js/darkmode.js"></script>
+  <script src="js/menu.js"></script>
 </body>
 </html>
