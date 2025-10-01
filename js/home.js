@@ -22,15 +22,36 @@ document.addEventListener("DOMContentLoaded", () => {
     data.forEach((item, index) => {
       const slide = document.createElement("div");
       slide.className = "slide";
+
+      // Destaque visual para urgentes
+      if (item.urgente) {
+        slide.classList.add("destaque");
+      }
+
+      // Tags como atributos para filtros futuros
+      if (item.tags) {
+        slide.setAttribute("data-tags", item.tags.join(","));
+      }
+
+      // Banner promocional como classe adicional
+      if (item.banner) {
+        slide.classList.add(item.banner);
+      }
+
+      // Conteúdo principal do slide
       slide.innerHTML = `
         <a href="${item.link}" aria-label="${item.titulo}">
           <img src="${item.imagem}" alt="${item.titulo}" />
           <h3>${item.titulo}</h3>
           <p>${item.descricao}</p>
+          ${item.agendamento ? `<span class="agendamento">Agendamento: ${item.agendamento.tipo} (${item.agendamento.duracao})</span>` : ""}
+          ${item.video ? `<a href="${item.video}" class="video-link" target="_blank">🎥 Ver vídeo</a>` : ""}
         </a>
       `;
+
       track.appendChild(slide);
 
+      // Indicadores
       const indicador = document.createElement("span");
       indicador.setAttribute("aria-label", `Slide ${index + 1}`);
       indicador.setAttribute("role", "button");
