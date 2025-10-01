@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const slide = document.createElement("div");
       slide.className = "slide";
       slide.innerHTML = `
-        <a href="${item.link}">
+        <a href="${item.link}" aria-label="${item.titulo}">
           <img src="${item.imagem}" alt="${item.titulo}" />
           <h3>${item.titulo}</h3>
           <p>${item.descricao}</p>
@@ -32,6 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
       track.appendChild(slide);
 
       const indicador = document.createElement("span");
+      indicador.setAttribute("aria-label", `Slide ${index + 1}`);
+      indicador.setAttribute("role", "button");
       indicador.addEventListener("click", () => {
         slideIndex = index;
         updateCarousel();
