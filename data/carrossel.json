@@ -3,10 +3,12 @@
     "id": "ssd-nvme",
     "titulo": "SSD NVMe 1TB",
     "descricao": "por R$554.90",
-    "imagem": "https://www.kabum.com.br/_next/image?url=https%3A%2F%2Fimages5.kabum.com.br%2Fprodutos%2Ffotos%2F885105%2Fssd-rise-mode-gamer-m-2-z-series-pro-1tb-m-2-nvme-gen3-leitura-3500mb-s-e-gravacao-2600mb-s-rm-ssd-1tb-m2pro_1758028755_gg.jpg&w=1920&q=75",
-    "link": "https://www.awin1.com/cread.php?awinmid=17729&awinaffid=2555563&clickref=SSD+Rise+Mode&ued=https%3A%2F%2Fwww.kabum.com.br%2Fproduto%2F885105%2Fssd-rise-mode-gamer-m-2-z-series-pro-1tb-m-2-nvme-gen3-leitura-3500mb-s-e-gravacao-2600mb-s-rm-ssd-1tb-m2pro",
+    "imagem": "https://images5.kabum.com.br/produtos/fotos/885105/ssd-rise-mode-gamer.jpg",
+    "link": "https://www.kabum.com.br/produto/885105",
     "categoria": "produtos",
-    "urgente": true
+    "urgente": true,
+    "tags": ["armazenamento", "nvme", "desempenho"],
+    "banner": "promoção-relampago"
   },
   {
     "id": "kit-tecnico",
@@ -15,7 +17,8 @@
     "imagem": "img/kit-tecnico.jpg",
     "link": "produtos.html#kit-tecnico",
     "categoria": "produtos",
-    "urgente": false
+    "urgente": false,
+    "tags": ["ferramentas", "manutenção"]
   },
   {
     "id": "consultoria",
@@ -24,7 +27,13 @@
     "imagem": "img/consultoria.jpg",
     "link": "upgrades.html#consultoria",
     "categoria": "upgrades",
-    "urgente": false
+    "urgente": false,
+    "tags": ["setup", "personalizado"],
+    "agendamento": {
+      "tipo": "online",
+      "duracao": "30min",
+      "canal": "whatsapp"
+    }
   },
   {
     "id": "windows11",
@@ -33,7 +42,8 @@
     "imagem": "img/windows11.jpg",
     "link": "upgrades.html#windows11",
     "categoria": "upgrades",
-    "urgente": true
+    "urgente": true,
+    "tags": ["sistema", "windows", "licença"]
   },
   {
     "id": "formata",
@@ -41,7 +51,13 @@
     "descricao": "Seu PC limpo e otimizado em 24h",
     "imagem": "img/formata.jpg",
     "link": "servicos.html#formata",
-    "categoria": "servicos"
+    "categoria": "servicos",
+    "tags": ["formatação", "otimização"],
+    "agendamento": {
+      "tipo": "presencial",
+      "duracao": "1h",
+      "canal": "loja"
+    }
   },
   {
     "id": "suporte",
@@ -49,7 +65,8 @@
     "descricao": "Diagnóstico gratuito e atendimento rápido",
     "imagem": "img/suporte.jpg",
     "link": "servicos.html#suporte",
-    "categoria": "servicos"
+    "categoria": "servicos",
+    "tags": ["suporte", "diagnóstico", "whatsapp"]
   },
   {
     "id": "ssd-ideal",
@@ -57,7 +74,9 @@
     "descricao": "Descubra os tipos, velocidades e compatibilidades",
     "imagem": "img/blog-ssd.jpg",
     "link": "blog.html#ssd-ideal",
-    "categoria": "blog"
+    "categoria": "blog",
+    "tags": ["ssd", "guia", "armazenamento"],
+    "video": "https://www.youtube.com/watch?v=abc123"
   },
   {
     "id": "upgrade-sinais",
@@ -65,6 +84,7 @@
     "descricao": "Desempenho lento, travamentos e mais",
     "imagem": "img/blog-upgrade.jpg",
     "link": "blog.html#upgrade-sinais",
-    "categoria": "blog"
+    "categoria": "blog",
+    "tags": ["upgrade", "desempenho", "pc"]
   }
 ]
