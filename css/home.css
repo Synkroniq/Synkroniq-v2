@@ -40,6 +40,29 @@
   object-fit: cover;
 }
 
+/* 🔥 Slide urgente */
+.slide.destaque {
+  border: 2px solid #FF4136;
+  box-shadow: 0 0 12px rgba(255, 65, 54, 0.4);
+}
+
+/* 📅 Informações de agendamento */
+.agendamento {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #007BFF;
+}
+
+/* 🎥 Link para vídeo */
+.video-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #FF4136;
+  text-decoration: underline;
+}
+
 /* 🎯 Botões de navegação */
 .nav-btn {
   position: absolute;
