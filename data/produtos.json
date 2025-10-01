@@ -4,13 +4,21 @@
     "nome": "Kit Upgrade Técnico",
     "descricao": "Placa-mãe + SSD + Fonte",
     "preco": "R$ 799,00",
-    "expiraEm": "2025-10-15T23:59:59"
+    "imagem": "assets/img/produtos/kit-upgrade.jpg",
+    "categoria": "Hardware",
+    "estoque": 12,
+    "expiraEm": "2025-10-15T23:59:59",
+    "link": "https://wa.me/5544997648490?text=Olá! Gostaria de comprar o Kit Upgrade Técnico"
   },
   {
     "id": "002",
     "nome": "Monitor Full HD 24\"",
     "descricao": "Ideal para produtividade e jogos",
     "preco": "R$ 499,00",
-    "expiraEm": "2025-10-10T23:59:59"
+    "imagem": "assets/img/produtos/monitor-24.jpg",
+    "categoria": "Periféricos",
+    "estoque": 7,
+    "expiraEm": "2025-10-10T23:59:59",
+    "link": "https://wa.me/5544997648490?text=Olá! Gostaria de comprar o Monitor Full HD 24\""
   }
 ]
