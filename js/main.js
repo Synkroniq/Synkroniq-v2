@@ -4,12 +4,14 @@ import { loadComponent } from './loader.js';
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Synkroniq 2.0 iniciado");
 
-  // 🔧 Carregamento dos componentes dinâmicos
-  loadComponent("header-container", "components/header.html", ativarMenuSanduiche);
+  // ✅ Se estiver usando header ESTÁTICO no HTML, ative o menu diretamente
+  ativarMenuSanduiche();
+
+  // ✅ Carregamento dos componentes dinâmicos (sem header)
   loadComponent("footer-container", "components/footer.html");
   loadComponent("card-servico-container", "components/card-servico.html");
 
-  // ☰ Ativa o menu sanduíche após o header ser carregado
+  // ☰ Ativa o menu sanduíche
   function ativarMenuSanduiche() {
     const toggleBtn = document.querySelector('.menu-toggle');
     const menu = document.getElementById('mainMenu');
@@ -21,9 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       document.addEventListener('click', closeMenuOnOutsideClick);
       console.log("Menu sanduíche ativado com sucesso");
-      return true;
+    } else {
+      console.warn("Menu sanduíche não encontrado no DOM.");
     }
-    return false;
   }
 
   // 📦 Registro do Service Worker
