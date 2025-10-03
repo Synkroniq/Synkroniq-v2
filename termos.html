@@ -4,52 +4,78 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Termos de Uso | Synkroniq</title>
-   <style>
-  body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-  margin: 0;
-  padding: 0;
-}
 
-main.container {
-  max-width: 800px;
-  margin: 60px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.05);
-}
+  <!-- Estilo local -->
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
 
-h1 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #222;
-}
+    main.container {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    }
 
-p {
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-</style>
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+  </style>
+
+  <!-- Base para navegação interna -->
   <base href="/Synkroniq-v2/" />
+
+  <!-- Estilos globais -->
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/darkmode.css" />
   <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#007BFF" />
+
+  <!-- Fallback para JS desativado -->
+  <noscript>
+    <style>.container { display: none; }</style>
+    <p style="text-align:center; padding:1rem; background:#ffdddd;">
+      Este site requer JavaScript para funcionar corretamente.
+    </p>
+  </noscript>
 </head>
 <body>
+
+  <!-- Cabeçalho dinâmico -->
   <div id="header-container"></div>
 
-  <main class="container">
+  <!-- Conteúdo principal -->
+  <main class="container" role="main" aria-label="Termos de Uso">
     <h1>Termos de Uso</h1>
     <p>
       Ao acessar e utilizar este site, você concorda com nossas diretrizes de navegação, respeita os direitos autorais sobre conteúdos, imagens e marcas, e reconhece que as informações aqui disponibilizadas têm caráter informativo e promocional. O uso indevido de qualquer conteúdo poderá acarretar medidas legais.
     </p>
   </main>
 
+  <!-- Rodapé dinâmico -->
   <div id="footer-container"></div>
+
+  <!-- Scripts -->
   <script type="module" src="js/main.js"></script>
   <script src="js/darkmode.js"></script>
 </body>
