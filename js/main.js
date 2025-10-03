@@ -4,7 +4,7 @@ import { loadComponent } from './loader.js';
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Synkroniq 2.0 iniciado");
 
-  // ✅ Se estiver usando header ESTÁTICO no HTML, ative o menu diretamente
+  // ✅ Ativa o menu sanduíche para header estático
   ativarMenuSanduiche();
 
   // ✅ Carregamento dos componentes dinâmicos (sem header)
@@ -16,16 +16,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggleBtn = document.querySelector('.menu-toggle');
     const menu = document.getElementById('mainMenu');
 
-    if (toggleBtn && menu) {
-      toggleBtn.addEventListener('click', toggleMenu);
-      menu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', closeMenuOnLinkClick);
-      });
-      document.addEventListener('click', closeMenuOnOutsideClick);
-      console.log("Menu sanduíche ativado com sucesso");
-    } else {
+    if (!toggleBtn || !menu) {
       console.warn("Menu sanduíche não encontrado no DOM.");
+      return;
     }
+
+    // Evita múltiplos listeners em páginas com navegação SPA
+    toggleBtn.removeEventListener('click', toggleMenu);
+    toggleBtn.addEventListener('click', toggleMenu);
+
+    document.removeEventListener('click', closeMenuOnOutsideClick);
+    document.addEventListener('click', closeMenuOnOutsideClick);
+
+    menu.querySelectorAll('a').forEach(link => {
+      link.removeEventListener('click', closeMenuOnLinkClick);
+      link.addEventListener('click', closeMenuOnLinkClick);
+    });
+
+    console.log("Menu sanduíche ativado com sucesso");
   }
 
   // 📦 Registro do Service Worker
