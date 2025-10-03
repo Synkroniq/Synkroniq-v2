@@ -175,21 +175,25 @@ body.dark #toggle-dark {
     font-size: 2.2rem;
   }
 
+  /* ☰ Menu lateral deslizante */
   #mainMenu {
-    background-color: rgba(0, 0, 0, 0.9);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    padding: 1rem 0;
-    display: none;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 2rem 1.5rem;
+    display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    transition: left 0.3s ease;
     z-index: 999;
   }
 
   #mainMenu.active {
-    display: flex;
+    left: 0;
   }
 
   #mainMenu ul {
@@ -197,27 +201,35 @@ body.dark #toggle-dark {
     gap: 1rem;
     padding: 0;
     margin: 0;
+    width: 100%;
   }
 
   #mainMenu li {
     width: 100%;
-    text-align: center;
   }
 
   #mainMenu a {
     display: block;
+    width: 100%;
+    padding: 0.8rem 1rem;
     color: #f5f5f5;
+    text-decoration: none;
+    border-radius: 0;
     background: none;
     box-shadow: none;
-    padding: 0.8rem;
+    border-left: 3px solid transparent;
+    transition: border 0.3s ease;
   }
 
-  #mainMenu a:hover {
-    text-decoration: underline;
+  #mainMenu a:hover,
+  #mainMenu a.ativo {
+    border-left: 3px solid #00C6FF;
+    background-color: rgba(255, 255, 255, 0.05);
   }
 
   .menu-toggle {
     color: #f5f5f5;
+    z-index: 1001;
   }
 
   #toggle-dark {
