@@ -9,7 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ✅ Carregamento dos componentes dinâmicos (sem header)
   loadComponent("footer-container", "components/footer.html");
-  loadComponent("card-servico-container", "components/card-servico.html");
+
+  const cardContainer = document.getElementById("card-servico-container");
+  if (cardContainer) {
+    loadComponent("card-servico-container", "components/card-servico.html");
+  }
 
   // ☰ Ativa o menu sanduíche
   function ativarMenuSanduiche() {
@@ -21,7 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Evita múltiplos listeners em páginas com navegação SPA
+    toggleBtn.classList.remove('oculto'); // garante visibilidade inicial
+
     toggleBtn.removeEventListener('click', toggleMenu);
     toggleBtn.addEventListener('click', toggleMenu);
 
