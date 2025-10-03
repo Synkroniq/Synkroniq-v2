@@ -1,4 +1,4 @@
-const CACHE_NAME = "synkroniq-cache-v2"; // use versionamento
+const CACHE_NAME = "synkroniq-cache-v2"; // versionamento inteligente
 
 const FILES_TO_CACHE = [
   "./",
@@ -7,7 +7,7 @@ const FILES_TO_CACHE = [
   "./js/main.js"
 ];
 
-// Instalação e cache inicial
+// 📦 Instalação e cache inicial
 self.addEventListener("install", event => {
   self.skipWaiting(); // ativa imediatamente
 
@@ -18,41 +18,47 @@ self.addEventListener("install", event => {
   );
 });
 
-// Ativação e limpeza de caches antigos
+// 🧹 Ativação e limpeza de caches antigos
 self.addEventListener("activate", event => {
   event.waitUntil(
-    caches.keys().then(keys => {
-      return Promise.all(
+    caches.keys().then(keys =>
+      Promise.all(
         keys.map(key => {
           if (key !== CACHE_NAME) {
-            return caches.delete(key); // remove caches antigos
+            return caches.delete(key);
           }
         })
-      );
-    }).then(() => self.clients.claim())
+      )
+    ).then(() => self.clients.claim())
   );
 });
 
-// Intercepta requisições e serve do cache
+// 🔄 Intercepta requisições e serve do cache
 self.addEventListener("fetch", event => {
-  const url = new URL(event.request.url);
+  const { request } = event;
+  const url = new URL(request.url);
 
+  // Ignora extensões do navegador
   if (url.protocol === "chrome-extension:" || url.protocol === "moz-extension:") return;
 
+  // Ignora requisições POST, PUT, DELETE
+  if (request.method !== "GET") return;
+
   event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request).then(networkResponse => {
-        if (event.request.method === "GET" && networkResponse.ok) {
+    caches.match(request).then(cachedResponse => {
+      if (cachedResponse) return cachedResponse;
+
+      return fetch(request)
+        .then(networkResponse => {
+          if (!networkResponse || !networkResponse.ok) return networkResponse;
+
+          // Armazena no cache apenas arquivos estáticos
           return caches.open(CACHE_NAME).then(cache => {
-            cache.put(event.request, networkResponse.clone());
+            cache.put(request, networkResponse.clone());
             return networkResponse;
           });
-        }
-
-        return networkResponse;
-      }).catch(() => {
-        return response; // fallback offline opcional
-      });
+        })
+        .catch(() => cachedResponse) // fallback offline
     })
   );
 });
