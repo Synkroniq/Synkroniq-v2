@@ -115,6 +115,10 @@
   fill: currentColor;
 }
 
+.menu-toggle.oculto {
+  display: none !important;
+}
+
 body.dark .menu-toggle {
   color: #f5f5f5;
 }
@@ -189,7 +193,7 @@ body.dark #toggle-dark {
     align-items: flex-start;
     justify-content: flex-start;
     transition: left 0.3s ease;
-    z-index: 999;
+    z-index: 9999;
   }
 
   #mainMenu.active {
