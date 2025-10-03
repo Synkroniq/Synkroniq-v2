@@ -12,6 +12,9 @@
   <link rel="stylesheet" href="css/darkmode.css" />
   <link rel="stylesheet" href="css/header.css" />
   <link rel="stylesheet" href="css/footer.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
 
@@ -23,9 +26,20 @@
 
     <header class="topo fade-in">
       <div class="container header-flex">
-        <a href="index.html" class="logo">Synkroniq<span class="tech">.tech</span></a>
-        <button class="menu-toggle" aria-label="Abrir menu">☰</button>
-        <nav id="mainMenu" class="menu">
+        <!-- Logotipo -->
+        <a href="index.html" class="logo" aria-label="Página inicial Synkroniq">
+          Synkroniq<span class="tech">.tech</span>
+        </a>
+
+        <!-- Botão sanduíche -->
+        <button class="menu-toggle" aria-label="Abrir menu" type="button">
+          <svg aria-hidden="true" class="e-font-icon-svg e-fas-bars" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path>
+          </svg>
+        </button>
+
+        <!-- Menu de navegação -->
+        <nav id="mainMenu" class="menu" aria-label="Navegação Principal" role="navigation">
           <ul>
             <li><a href="index.html">Início</a></li>
             <li><a href="produtos.html">Produtos</a></li>
@@ -36,7 +50,11 @@
             <li><a href="contato.html">Contato</a></li>
           </ul>
         </nav>
-        <button id="toggle-dark" title="Alternar tema"><i class="fas fa-moon"></i></button>
+
+        <!-- Botão de alternância de tema -->
+        <button id="toggle-dark" title="Alternar tema" aria-label="Alternar entre modo claro e escuro" type="button">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
       </div>
     </header>
 
@@ -47,7 +65,7 @@
   </section>
 
   <!-- Lista de serviços -->
-  <main id="lista-servicos">
+  <main id="lista-servicos" role="main">
     <!-- Serviços serão carregados aqui -->
   </main>
 
@@ -58,5 +76,6 @@
   <script src="js/servicos.js"></script>
   <script src="js/darkmode.js"></script>
   <script src="js/menu.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
