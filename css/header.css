@@ -1,11 +1,11 @@
-/* 🧱 Cabeçalho com imagem temática */
+/ 🧱 Cabeçalho com imagem temática /
 .cabecalho-visual {
   position: relative;
   height: 60vh;
   width: 100%;
   color: white;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
   text-align: center;
   overflow: hidden;
@@ -19,52 +19,57 @@
   height: 100%;
   object-fit: cover;
   filter: brightness(0.4);
-  z-index: 0;
 }
 
-/* ✅ Tudo sobreposto à imagem */
-header.topo,
-.header-flex,
 .conteudo-cabecalho {
   position: relative;
   z-index: 2;
-  background: none; /* remove fundo estático */
+  padding: 2rem;
 }
 
-/* 🧱 Cabeçalho flexível */
+.conteudo-cabecalho h1 {
+  font-size: 2.5rem;
+  text-shadow: 0 0 10px #00C6FF, 0 0 20px #007BFF;
+}
+
+/ 🧱 Cabeçalho flexível /
+header.topo {
+  position: relative;
+  z-index: 1000;
+}
+
 .header-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
-  padding: 1rem 2rem;
+  padding: 1rem 0;
 }
 
-/* 🏷️ Logo principal */
+/ 🏷️ Logo principal /
 .logo {
   font-size: 2.5rem;
   font-weight: bold;
   color: #00C6FF;
   text-shadow: 0 0 10px #00C6FF, 0 0 20px #007BFF;
   text-decoration: none;
-  background: none;
 }
 
 .logo .tech {
   color: #00FF99;
 }
 
-/* 📐 Menu de navegação */
-#mainMenu {
+/ 📐 Menu de navegação /
+
+mainMenu {
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
   justify-content: center;
-  background: none;
 }
 
-#mainMenu ul {
+mainMenu ul {
   list-style: none;
   display: flex;
   gap: 1.5rem;
@@ -73,11 +78,11 @@ header.topo,
   flex-wrap: wrap;
 }
 
-#mainMenu li {
+mainMenu li {
   display: block;
 }
 
-#mainMenu a {
+mainMenu a {
   text-decoration: none;
   font-weight: bold;
   color: #ffffff;
@@ -88,13 +93,14 @@ header.topo,
   transition: background 0.3s ease;
 }
 
-#mainMenu a:hover,
-#mainMenu a.ativo {
+mainMenu a:hover,
+
+mainMenu a.ativo {
   background: rgba(0, 198, 255, 0.3);
   box-shadow: 0 0 12px rgba(0, 198, 255, 0.6);
 }
 
-/* ☰ Botão sanduíche */
+/ ☰ Botão sanduíche /
 .menu-toggle {
   background: none;
   border: none;
@@ -118,7 +124,7 @@ body.dark .menu-toggle {
   color: #f5f5f5;
 }
 
-/* 🌙 Modo escuro */
+/ 🌙 Modo escuro /
 body.dark .logo {
   color: #66B2FF;
 }
@@ -137,8 +143,9 @@ body.dark #mainMenu a.ativo {
   box-shadow: 0 0 12px rgba(0, 198, 255, 0.6);
 }
 
-/* ☀️ Botão de alternância de tema */
-#toggle-dark {
+/ ☀️ Botão de alternância de tema /
+
+toggle-dark {
   background: none;
   border: none;
   font-size: 1.5rem;
@@ -152,7 +159,7 @@ body.dark #toggle-dark {
   color: #00FFAA;
 }
 
-/* 📱 Responsividade */
+/ 📱 Responsividade /
 @media (max-width: 768px) {
   .cabecalho-visual {
     height: auto;
@@ -174,7 +181,9 @@ body.dark #toggle-dark {
     font-size: 2.2rem;
   }
 
-  #mainMenu {
+  / ☰ Menu lateral deslizante /
+
+mainMenu {
     position: fixed;
     top: 0;
     left: -100%;
@@ -190,11 +199,11 @@ body.dark #toggle-dark {
     z-index: 1001;
   }
 
-  #mainMenu.active {
+mainMenu.active {
     left: 0;
   }
 
-  #mainMenu ul {
+mainMenu ul {
     flex-direction: column;
     gap: 1rem;
     padding: 0;
@@ -202,11 +211,11 @@ body.dark #toggle-dark {
     width: 100%;
   }
 
-  #mainMenu li {
+mainMenu li {
     width: 100%;
   }
 
-  #mainMenu a {
+mainMenu a {
     display: block;
     width: 100%;
     padding: 0.8rem 1rem;
@@ -219,8 +228,9 @@ body.dark #toggle-dark {
     transition: border 0.3s ease;
   }
 
-  #mainMenu a:hover,
-  #mainMenu a.ativo {
+mainMenu a:hover,
+
+mainMenu a.ativo {
     border-left: 3px solid #00C6FF;
     background-color: rgba(255, 255, 255, 0.05);
   }
@@ -229,7 +239,7 @@ body.dark #toggle-dark {
     color: #f5f5f5;
   }
 
-  #toggle-dark {
+toggle-dark {
     margin: 1rem auto 0;
   }
 }
