@@ -9,7 +9,7 @@
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  background: none;
+  background: transparent;
 }
 
 .fundo-cabecalho img {
@@ -26,7 +26,7 @@
   position: relative;
   z-index: 2;
   padding: 2rem;
-  background: none;
+  background: transparent;
 }
 
 .conteudo-cabecalho h1 {
@@ -38,7 +38,7 @@
 header.topo {
   position: relative;
   z-index: 1000;
-  background: none;
+  background: transparent;
 }
 
 .header-flex {
@@ -48,7 +48,7 @@ header.topo {
   flex-wrap: wrap;
   gap: 1rem;
   padding: 1rem 0;
-  background: none;
+  background: transparent;
 }
 
 / 🏷️ Logo principal /
