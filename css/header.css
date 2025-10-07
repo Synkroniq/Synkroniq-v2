@@ -1,14 +1,12 @@
 /* 🧱 Cabeçalho com imagem temática */
 .cabecalho-visual {
   position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: 60vh;
   width: 100%;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   overflow: hidden;
 }
@@ -20,7 +18,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 0;
   filter: brightness(0.4);
 }
 
@@ -38,7 +35,7 @@
 /* 🧱 Cabeçalho flexível */
 header.topo {
   position: relative;
-  z-index: 2;
+  z-index: 1000;
 }
 
 .header-flex {
@@ -48,8 +45,6 @@ header.topo {
   flex-wrap: wrap;
   gap: 1rem;
   padding: 1rem 0;
-  position: relative;
-  z-index: 3;
 }
 
 /* 🏷️ Logo principal */
@@ -111,7 +106,6 @@ header.topo {
   cursor: pointer;
   color: #ffffff;
   z-index: 1001;
-  position: relative;
 }
 
 .menu-toggle svg {
