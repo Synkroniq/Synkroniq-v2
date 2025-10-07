@@ -258,3 +258,16 @@ body.dark .header-flex,
 body.dark .conteudo-cabecalho {
   background: transparent !important;
 }
+
+header.topo.menu-ativo .conteudo-cabecalho {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+header.topo.menu-ativo .conteudo-cabecalho p {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
