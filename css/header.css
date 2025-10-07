@@ -1,6 +1,7 @@
 /* 🧱 Cabeçalho com imagem temática */
 .cabecalho-visual {
   position: relative;
+  z-index: 0;
   height: 60vh;
   width: 100%;
   color: white;
