@@ -1,6 +1,6 @@
 /* 🧱 Cabeçalho com imagem temática */
 .cabecalho-visual {
-  position: relative;
+  position: absolute;
   height: 60vh;
   width: 100%;
   color: white;
@@ -200,7 +200,7 @@ body.dark #toggle-dark {
     align-items: flex-start;
     justify-content: flex-start;
     transition: left 0.3s ease;
-    z-index: 9999;
+    z-index: 1001;
   }
 
   #mainMenu.active {
