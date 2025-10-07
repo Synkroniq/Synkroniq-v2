@@ -13,7 +13,7 @@
 
 .fundo-cabecalho img {
   position: absolute;
-  z-index: 0;
+  z-index: 2;
   top: 0;
   left: 0;
   width: 100%;
@@ -193,7 +193,7 @@ body.dark #toggle-dark {
     align-items: flex-start;
     justify-content: flex-start;
     transition: left 0.3s ease;
-    z-index: 9999;
+    z-index: 1001;
   }
 
   #mainMenu.active {
