@@ -4,10 +4,15 @@ import { loadComponent } from './loader.js';
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Synkroniq 2.0 iniciado");
 
-  // ✅ Carregamento do cabeçalho dinâmico + ativação do menu
-  loadComponent("header-container", "components/header.html", () => {
-    ativarMenuSanduiche(); // só ativa após o header estar no DOM
-  });
+  // ✅ Cabeçalho dinâmico ou ativação direta do menu
+  const headerContainer = document.getElementById("header-container");
+  if (headerContainer) {
+    loadComponent("header-container", "components/header.html", () => {
+      ativarMenuSanduiche(); // só ativa após o header estar no DOM
+    });
+  } else {
+    ativarMenuSanduiche(); // ativa diretamente se o cabeçalho já está embutido
+  }
 
   // ✅ Carregamento do rodapé
   loadComponent("footer-container", "components/footer.html");
