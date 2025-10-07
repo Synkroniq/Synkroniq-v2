@@ -4,12 +4,15 @@ import { loadComponent } from './loader.js';
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Synkroniq 2.0 iniciado");
 
-  // ✅ Ativa o menu sanduíche para header estático
-  ativarMenuSanduiche();
+  // ✅ Carregamento do cabeçalho dinâmico + ativação do menu
+  loadComponent("header-container", "components/header.html", () => {
+    ativarMenuSanduiche(); // só ativa após o header estar no DOM
+  });
 
-  // ✅ Carregamento dos componentes dinâmicos (sem header)
+  // ✅ Carregamento do rodapé
   loadComponent("footer-container", "components/footer.html");
 
+  // ✅ Carregamento do card de serviços (se existir)
   const cardContainer = document.getElementById("card-servico-container");
   if (cardContainer) {
     loadComponent("card-servico-container", "components/card-servico.html");
