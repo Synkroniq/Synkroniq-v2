@@ -23,7 +23,6 @@
 }
 
 /* Conteúdo sobreposto à imagem */
-
 header.topo,
 .header-flex,
 .logo,
@@ -117,7 +116,7 @@ header.topo,
   font-size: 2rem;
   cursor: pointer;
   color: #ffffff;
-  z-index: 1001;
+  z-index: 1002;
 }
 
 .menu-toggle svg {
@@ -203,12 +202,12 @@ body.dark #toggle-dark {
     align-items: flex-start;
     justify-content: flex-start;
     transition: left 0.3s ease;
-    z-index: 1001;
+    z-index: 9999; /* 👈 sobrepõe tudo */
+    background-color: rgba(0, 0, 0, 0.95);
   }
 
   #mainMenu.active {
     left: 0;
-    background-color: rgba(0, 0, 0, 0.95);
   }
 
   #mainMenu ul {
@@ -251,6 +250,7 @@ body.dark #toggle-dark {
   }
 }
 
+/* 🌙 Modo escuro transparente */
 body.dark .cabecalho-visual,
 body.dark .fundo-cabecalho img,
 body.dark header.topo,
@@ -258,16 +258,3 @@ body.dark .header-flex,
 body.dark .conteudo-cabecalho {
   background: transparent !important;
 }
-
-header.topo.menu-ativo .conteudo-cabecalho {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-header.topo.menu-ativo .conteudo-cabecalho p {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
