@@ -111,6 +111,7 @@ header.topo {
   cursor: pointer;
   color: #ffffff;
   z-index: 1001;
+  position: relative;
 }
 
 .menu-toggle svg {
