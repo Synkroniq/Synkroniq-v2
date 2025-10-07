@@ -52,13 +52,13 @@ header.topo,
 .logo {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #00C6FF;
+  color: transparent;
   text-shadow: 0 0 10px #00C6FF, 0 0 20px #007BFF;
   text-decoration: none;
 }
 
 .logo .tech {
-  color: #00FF99;
+  color: transparent;
 }
 
 /* 📐 Menu de navegação */
