@@ -23,6 +23,7 @@
 }
 
 /* Conteúdo sobreposto à imagem */
+
 header.topo,
 .header-flex,
 .logo,
@@ -34,7 +35,7 @@ header.topo,
 
 .conteudo-cabecalho {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   padding: 2rem;
   background: none;
 }
