@@ -35,15 +35,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     toggleBtn.classList.remove('oculto'); // garante visibilidade inicial
 
-    toggleBtn.removeEventListener('click', toggleMenu);
-    toggleBtn.addEventListener('click', toggleMenu);
+    // Evita múltiplos bindings
+    toggleBtn.onclick = toggleMenu;
 
-    document.removeEventListener('click', closeMenuOnOutsideClick);
+    // Fecha ao clicar fora
     document.addEventListener('click', closeMenuOnOutsideClick);
 
-    menu.querySelectorAll('a').forEach(link => {
-      link.removeEventListener('click', closeMenuOnLinkClick);
-      link.addEventListener('click', closeMenuOnLinkClick);
+    // Fecha ao clicar em links internos
+    const links = menu.querySelectorAll('a');
+    links.forEach(link => {
+      link.onclick = closeMenuOnLinkClick;
     });
 
     console.log("Menu sanduíche ativado com sucesso");
