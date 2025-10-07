@@ -193,7 +193,6 @@ body.dark #toggle-dark {
     left: -100%;
     width: 70%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
     padding: 2rem 1.5rem;
     display: flex;
     flex-direction: column;
@@ -205,6 +204,7 @@ body.dark #toggle-dark {
 
   #mainMenu.active {
     left: 0;
+    background-color: rgba(0, 0, 0, 0.95);
   }
 
   #mainMenu ul {
@@ -245,4 +245,12 @@ body.dark #toggle-dark {
   #toggle-dark {
     margin: 1rem auto 0;
   }
+}
+
+body.dark .cabecalho-visual,
+body.dark .fundo-cabecalho img,
+body.dark header.topo,
+body.dark .header-flex,
+body.dark .conteudo-cabecalho {
+  background: transparent !important;
 }
