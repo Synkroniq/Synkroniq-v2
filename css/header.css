@@ -13,6 +13,7 @@
 
 .fundo-cabecalho img {
   position: absolute;
+  z-index: 0;
   top: 0;
   left: 0;
   width: 100%;
@@ -35,7 +36,7 @@
 /* 🧱 Cabeçalho flexível */
 header.topo {
   position: relative;
-  z-index: 1000;
+  z-index: 2;
 }
 
 .header-flex {
