@@ -2,10 +2,11 @@
 export function toggleMenu() {
   const menu = document.getElementById('mainMenu');
   const toggleBtn = document.querySelector('.menu-toggle');
-  if (!menu || !toggleBtn) return;
+  const header = document.querySelector('header.topo');
+  if (!menu || !toggleBtn || !header) return;
 
   const isActive = menu.classList.toggle('active');
-  document.body.classList.toggle('menu-open', isActive);
+  header.classList.toggle('menu-ativo', isActive);
 
   // Oculta ou exibe o botão ☰
   toggleBtn.classList.toggle('oculto', isActive);
@@ -15,14 +16,15 @@ export function toggleMenu() {
 export function closeMenuOnOutsideClick(e) {
   const menu = document.getElementById('mainMenu');
   const toggleBtn = document.querySelector('.menu-toggle');
-  if (!menu || !toggleBtn) return;
+  const header = document.querySelector('header.topo');
+  if (!menu || !toggleBtn || !header) return;
 
   const clickedInsideMenu = menu.contains(e.target);
   const clickedToggleBtn = toggleBtn.contains(e.target);
 
   if (menu.classList.contains('active') && !clickedInsideMenu && !clickedToggleBtn) {
     menu.classList.remove('active');
-    document.body.classList.remove('menu-open');
+    header.classList.remove('menu-ativo');
     toggleBtn.classList.remove('oculto');
   }
 }
@@ -31,12 +33,13 @@ export function closeMenuOnOutsideClick(e) {
 export function closeMenuOnLinkClick(e) {
   const menu = document.getElementById('mainMenu');
   const toggleBtn = document.querySelector('.menu-toggle');
-  if (!menu || !toggleBtn) return;
+  const header = document.querySelector('header.topo');
+  if (!menu || !toggleBtn || !header) return;
 
   const isExternal = e.target.getAttribute('target') === '_blank';
   if (!isExternal && menu.classList.contains('active')) {
     menu.classList.remove('active');
-    document.body.classList.remove('menu-open');
+    header.classList.remove('menu-ativo');
     toggleBtn.classList.remove('oculto');
   }
 }
