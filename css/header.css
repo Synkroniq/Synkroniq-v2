@@ -22,20 +22,13 @@
   z-index: 0;
 }
 
+/* ✅ Tudo sobreposto à imagem */
 header.topo,
 .header-flex,
 .conteudo-cabecalho {
   position: relative;
   z-index: 2;
-}
-
-.conteudo-cabecalho {
-  padding: 2rem;
-}
-
-.conteudo-cabecalho h1 {
-  font-size: 2.5rem;
-  text-shadow: 0 0 10px #00C6FF, 0 0 20px #007BFF;
+  background: none; /* remove fundo estático */
 }
 
 /* 🧱 Cabeçalho flexível */
@@ -45,20 +38,21 @@ header.topo,
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
-  padding: 1rem 0;
+  padding: 1rem 2rem;
 }
 
 /* 🏷️ Logo principal */
 .logo {
   font-size: 2.5rem;
   font-weight: bold;
-  color: transparent;
+  color: #00C6FF;
   text-shadow: 0 0 10px #00C6FF, 0 0 20px #007BFF;
   text-decoration: none;
+  background: none;
 }
 
 .logo .tech {
-  color: transparent;
+  color: #00FF99;
 }
 
 /* 📐 Menu de navegação */
@@ -67,6 +61,7 @@ header.topo,
   gap: 1.5rem;
   flex-wrap: wrap;
   justify-content: center;
+  background: none;
 }
 
 #mainMenu ul {
@@ -179,7 +174,6 @@ body.dark #toggle-dark {
     font-size: 2.2rem;
   }
 
-  /* ☰ Menu lateral deslizante */
   #mainMenu {
     position: fixed;
     top: 0;
