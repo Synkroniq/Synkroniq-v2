@@ -1,7 +1,7 @@
 /* 🧱 Cabeçalho com imagem temática */
 .cabecalho-visual {
   position: relative;
-  z-index: auto;
+  z-index: 0; /* 🔧 garante que o menu fique acima */
   height: 60vh;
   width: 100%;
   color: white;
@@ -20,30 +20,18 @@
   height: 100%;
   object-fit: cover;
   filter: brightness(0.4);
-  z-index: 2;
+  z-index: 1;
 }
 
 /* Conteúdo sobreposto à imagem */
-header.topo,
-.header-flex,
-.logo,
-.menu-toggle {
-  position: relative;
-  z-index: 2;
-  background: none;
-}
-
 .conteudo-cabecalho {
   position: relative;
-  z-index: 2;
+  z-index: 1; /* 🔧 abaixo do menu */
   padding: 2rem;
   background: none;
 }
 
 .conteudo-cabecalho h1 {
-  position: relative;
-  z-index: 1;
-  background: none;
   font-size: 2.5rem;
   text-shadow: 0 0 10px #00C6FF, 0 0 20px #007BFF;
 }
@@ -78,6 +66,7 @@ header.topo,
   flex-wrap: wrap;
   justify-content: center;
   background: none;
+  isolation: isolate; /* 🔧 força contexto de empilhamento */
 }
 
 #mainMenu ul {
@@ -203,7 +192,7 @@ body.dark #toggle-dark {
     align-items: flex-start;
     justify-content: flex-start;
     transition: left 0.3s ease;
-    z-index: 9999; /* 👈 sobrepõe tudo */
+    z-index: 9999; /* 🔧 sobrepõe tudo */
     background-color: rgba(0, 0, 0, 0.95);
   }
 
@@ -254,12 +243,6 @@ body.dark #toggle-dark {
 /* 🌙 Modo escuro transparente */
 body.dark .cabecalho-visual,
 body.dark .fundo-cabecalho img,
-body.dark header.topo,
-body.dark .header-flex,
 body.dark .conteudo-cabecalho {
   background: transparent !important;
-}
-
-#mainMenu {
-  isolation: isolate; /* 👈 força novo contexto de empilhamento */
 }
