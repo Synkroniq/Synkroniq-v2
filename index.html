@@ -1,4 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Synkroniq | Tecnologia que te acompanha</title>
+
+  <!-- Estilos principais -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/carrossel.css" />
+  <link rel="stylesheet" href="css/darkmode.css" />
+  <link rel="stylesheet" href="css/modal.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/home.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#007BFF" />
+  <meta name="description" content="Ofertas relâmpago, upgrades, serviços técnicos, artigos e curiosidades sobre tecnologia. Acesse o portal Synkroniq e fique por dentro." />
+
+  <!-- Fallback para navegadores sem JS -->
+  <noscript>
+    <style>.container { display: none; }</style>
+    <p style="text-align:center; padding:1rem; background:#ffdddd;">
+      Este site requer JavaScript para funcionar corretamente.
+    </p>
+  </noscript>
+</head>
 <body>
+
   <!-- ✅ Cabeçalho funcional carregado dinamicamente -->
   <div id="header-container"></div>
 
@@ -15,8 +49,34 @@
 
   <!-- ✅ Conteúdo principal -->
   <main class="container" role="main">
-    <section id="carrossel-dinamico">...</section>
-    <section id="navegacao-guiada">...</section>
+
+    <!-- Carrossel dinâmico via JSON -->
+    <section id="carrossel-dinamico" aria-label="Destaques promocionais">
+      <h2>🔥 Destaques do Dia</h2>
+      <div class="carousel-wrapper">
+        <button class="nav-btn left" id="btn-esq" aria-label="Slide anterior">&#10094;</button>
+        <div class="carousel-track" id="carousel-track">
+          <!-- Slides serão inseridos via JS -->
+        </div>
+        <button class="nav-btn right" id="btn-dir" aria-label="Próximo slide">&#10095;</button>
+      </div>
+      <div class="indicadores" id="indicadores"></div>
+      <div id="timer" class="timer-bar"></div>
+    </section>
+
+    <!-- Navegação Guiada -->
+    <section id="navegacao-guiada" aria-label="Ajuda rápida">
+      <h2>🧭 O que você está procurando hoje?</h2>
+      <div class="navegacao-opcoes">
+        <a href="upgrade.html" class="btn-guia">Quero melhorar meu PC</a>
+        <a href="produtos.html" class="btn-guia">Quero comprar algo novo</a>
+        <a href="blog.html" class="btn-guia">Quero aprender mais sobre tecnologia</a>
+      </div>
+    </section>
+
+    <!-- Card de serviços (opcional) -->
+    <div id="card-servico-container"></div>
+
   </main>
 
   <!-- ✅ Rodapé dinâmico -->
@@ -30,3 +90,4 @@
   <script type="module" src="js/menu.js"></script>
   <script type="module" src="js/main.js"></script>
 </body>
+</html>
