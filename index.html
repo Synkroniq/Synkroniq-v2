@@ -1,77 +1,12 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Synkroniq | Tecnologia que te acompanha</title>
-
-  <!-- Estilos principais -->
-  <link rel="stylesheet" href="css/base.css" />
-  <link rel="stylesheet" href="css/layout.css" />
-  <link rel="stylesheet" href="css/carrossel.css" />
-  <link rel="stylesheet" href="css/darkmode.css" />
-  <link rel="stylesheet" href="css/modal.css" />
-  <link rel="stylesheet" href="css/header.css" />
-  <link rel="stylesheet" href="css/footer.css" />
-  <link rel="stylesheet" href="css/home.css" />
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-  <!-- PWA -->
-  <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#007BFF" />
-  <meta name="description" content="Ofertas relâmpago, upgrades, serviços técnicos, artigos e curiosidades sobre tecnologia. Acesse o portal Synkroniq e fique por dentro." />
-
-  <!-- Fallback para navegadores sem JS -->
-  <noscript>
-    <style>.container { display: none; }</style>
-    <p style="text-align:center; padding:1rem; background:#ffdddd;">
-      Este site requer JavaScript para funcionar corretamente.
-    </p>
-  </noscript>
-</head>
 <body>
+  <!-- 🔧 Cabeçalho funcional carregado dinamicamente -->
+  <div id="header-container"></div>
 
-  <!-- Cabeçalho visual com menu integrado -->
+  <!-- 🔷 Cabeçalho visual com imagem e texto -->
   <section class="cabecalho-visual">
     <div class="fundo-cabecalho">
       <img src="assets/img/cabecalho-index.png" alt="Synkroniq Tecnologia" />
     </div>
-
-    <header class="topo fade-in">
-      <div class="container header-flex">
-        <!-- Logotipo -->
-        <a href="index.html" class="logo" aria-label="Página inicial Synkroniq">
-          Synkroniq<span class="tech">.tech</span>
-        </a>
-
-        <!-- Botão sanduíche -->
-        <button class="menu-toggle" aria-label="Abrir menu" type="button">
-          <svg aria-hidden="true" class="e-font-icon-svg e-fas-bars" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path>
-          </svg>
-        </button>
-
-        <!-- Menu de navegação -->
-        <nav id="mainMenu" class="menu" aria-label="Navegação Principal" role="navigation">
-          <ul>
-            <li><a href="index.html" class="ativo">Início</a></li>
-            <li><a href="produtos.html">Produtos</a></li>
-            <li><a href="servicos.html">Serviços</a></li>
-            <li><a href="upgrade.html">Upgrade</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-            <li><a href="contato.html">Contato</a></li>
-          </ul>
-        </nav>
-
-        <!-- Botão de alternância de tema -->
-        <button id="toggle-dark" title="Alternar tema" aria-label="Alternar entre modo claro e escuro" type="button">
-          <i class="fas fa-moon" aria-hidden="true"></i>
-        </button>
-      </div>
-    </header>
 
     <div class="conteudo-cabecalho">
       <h1>Tecnologia que te acompanha</h1>
@@ -80,33 +15,9 @@
   </section>
 
   <main class="container" role="main">
-
-    <!-- Carrossel dinâmico via JSON -->
-    <section id="carrossel-dinamico" aria-label="Destaques promocionais">
-      <h2>🔥 Destaques do Dia</h2>
-      <div class="carousel-wrapper">
-        <button class="nav-btn left" id="btn-esq" aria-label="Slide anterior">&#10094;</button>
-        <div class="carousel-track" id="carousel-track">
-          <!-- Slides serão inseridos via JS -->
-        </div>
-        <button class="nav-btn right" id="btn-dir" aria-label="Próximo slide">&#10095;</button>
-      </div>
-      <div class="indicadores" id="indicadores"></div>
-    </section>
-
-    <!-- Navegação Guiada -->
-    <section id="navegacao-guiada" aria-label="Ajuda rápida">
-      <h2>🧭 O que você está procurando hoje?</h2>
-      <div class="navegacao-opcoes">
-        <a href="upgrade.html" class="btn-guia">Quero melhorar meu PC</a>
-        <a href="produtos.html" class="btn-guia">Quero comprar algo novo</a>
-        <a href="blog.html" class="btn-guia">Quero aprender mais sobre tecnologia</a>
-      </div>
-    </section>
-
+    <!-- ... conteúdo principal ... -->
   </main>
 
-  <!-- Rodapé dinâmico -->
   <div id="footer-container"></div>
 
   <!-- Scripts -->
@@ -117,4 +28,3 @@
   <script type="module" src="js/menu.js"></script>
   <script type="module" src="js/main.js"></script>
 </body>
-</html>
