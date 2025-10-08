@@ -28,46 +28,14 @@
 </head>
 <body>
 
-  <!-- Cabeçalho visual com menu integrado -->
+  <!-- ✅ Cabeçalho funcional carregado dinamicamente -->
+  <div id="header-container"></div>
+
+  <!-- 🔷 Cabeçalho visual com imagem e texto -->
   <section class="cabecalho-visual">
     <div class="fundo-cabecalho">
       <img src="assets/img/cabecalho-blog.png" alt="Blog Técnico Synkroniq" />
     </div>
-
-    <header class="topo fade-in">
-      <div class="container header-flex">
-        <!-- Logotipo -->
-        <a href="index.html" class="logo" aria-label="Página inicial Synkroniq">
-          Synkroniq<span class="tech">.tech</span>
-        </a>
-
-        <!-- Botão sanduíche -->
-        <button class="menu-toggle" aria-label="Abrir menu" type="button">
-          <svg aria-hidden="true" class="e-font-icon-svg e-fas-bars" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path>
-          </svg>
-        </button>
-
-        <!-- Menu de navegação -->
-        <nav id="mainMenu" class="menu" aria-label="Navegação Principal" role="navigation">
-          <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="produtos.html">Produtos</a></li>
-            <li><a href="servicos.html">Serviços</a></li>
-            <li><a href="upgrade.html">Upgrade</a></li>
-            <li><a href="blog.html" class="ativo">Blog</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-            <li><a href="contato.html">Contato</a></li>
-          </ul>
-        </nav>
-
-        <!-- Botão de alternância de tema -->
-        <button id="toggle-dark" title="Alternar tema" aria-label="Alternar entre modo claro e escuro" type="button">
-          <i class="fas fa-moon" aria-hidden="true"></i>
-        </button>
-      </div>
-    </header>
-
     <div class="conteudo-cabecalho">
       <h1>Blog Técnico</h1>
       <p>Artigos, curiosidades e insights sobre tecnologia</p>
@@ -79,10 +47,10 @@
     <!-- Artigos serão carregados aqui -->
   </main>
 
-  <!-- Rodapé dinâmico -->
+  <!-- ✅ Rodapé dinâmico -->
   <div id="footer-container"></div>
 
-  <!-- Scripts -->
+  <!-- ✅ Scripts -->
   <script src="js/blog.js"></script>
   <script src="js/darkmode.js"></script>
   <script src="js/menu.js"></script>
