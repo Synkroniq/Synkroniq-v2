@@ -4,7 +4,7 @@ import { loadComponent } from './loader.js';
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Synkroniq 2.0 iniciado");
 
-  // ✅ Cabeçalho dinâmico ou ativação direta do menu
+  // ✅ Carrega o cabeçalho funcional fora da .cabecalho-visual
   const headerContainer = document.getElementById("header-container");
   if (headerContainer) {
     loadComponent("header-container", "components/header.html", () => {
