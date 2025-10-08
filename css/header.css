@@ -1,7 +1,7 @@
 /* 🧱 Cabeçalho com imagem temática */
 .cabecalho-visual {
   position: relative;
-  z-index: 0; /* 🔧 garante que o menu fique acima */
+  z-index: 0;
   height: 60vh;
   width: 100%;
   color: white;
@@ -23,10 +23,9 @@
   z-index: 1;
 }
 
-/* Conteúdo sobreposto à imagem */
 .conteudo-cabecalho {
   position: relative;
-  z-index: 1; /* 🔧 abaixo do menu */
+  z-index: 1;
   padding: 2rem;
   background: none;
 }
@@ -48,6 +47,8 @@
 
 /* 🏷️ Logo principal */
 .logo {
+  position: relative;
+  z-index: 1001;
   font-size: 2.5rem;
   font-weight: bold;
   color: #00C6FF;
@@ -61,12 +62,14 @@
 
 /* 📐 Menu de navegação */
 #mainMenu {
+  position: relative;
+  z-index: 1001;
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
   justify-content: center;
   background: none;
-  isolation: isolate; /* 🔧 força contexto de empilhamento */
+  isolation: isolate;
 }
 
 #mainMenu ul {
@@ -106,6 +109,7 @@
   font-size: 2rem;
   cursor: pointer;
   color: #ffffff;
+  position: relative;
   z-index: 1002;
 }
 
@@ -179,7 +183,6 @@ body.dark #toggle-dark {
     font-size: 2.2rem;
   }
 
-  /* ☰ Menu lateral deslizante */
   #mainMenu {
     position: fixed;
     top: 0;
@@ -192,7 +195,7 @@ body.dark #toggle-dark {
     align-items: flex-start;
     justify-content: flex-start;
     transition: left 0.3s ease;
-    z-index: 9999; /* 🔧 sobrepõe tudo */
+    z-index: 9999;
     background-color: rgba(0, 0, 0, 0.95);
   }
 
