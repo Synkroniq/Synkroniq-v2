@@ -200,6 +200,7 @@ body.dark #toggle-dark {
     left: -100%;
     width: 70%;
     height: 100%;
+    pointer-events: auto;
     padding: 2rem 1.5rem;
     display: flex;
     flex-direction: column;
