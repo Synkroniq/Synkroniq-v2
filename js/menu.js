@@ -8,6 +8,9 @@ export function toggleMenu() {
 
   // Oculta ou exibe o botão ☰
   toggleBtn.classList.toggle('oculto', isActive);
+
+  // Aplica ou remove bloqueio de cliques no conteúdo
+  document.body.classList.toggle('menu-aberto', isActive);
 }
 
 // ✅ Fecha o menu ao clicar fora dele
@@ -22,6 +25,7 @@ export function closeMenuOnOutsideClick(e) {
   if (menu.classList.contains('active') && !clickedInsideMenu && !clickedToggleBtn) {
     menu.classList.remove('active');
     toggleBtn.classList.remove('oculto');
+    document.body.classList.remove('menu-aberto');
   }
 }
 
@@ -35,5 +39,6 @@ export function closeMenuOnLinkClick(e) {
   if (!isExternal && menu.classList.contains('active')) {
     menu.classList.remove('active');
     toggleBtn.classList.remove('oculto');
+    document.body.classList.remove('menu-aberto');
   }
 }
