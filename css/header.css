@@ -205,8 +205,8 @@ body.dark #toggle-dark {
     align-items: flex-start;
     justify-content: flex-start;
     transition: left 0.3s ease;
-    z-index: 9999;
-    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 99999;
+    background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.6));
   }
 
   #mainMenu.active {
