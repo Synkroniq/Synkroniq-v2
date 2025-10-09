@@ -123,3 +123,9 @@ main, .section, .content {
 body {
   overflow-x: hidden;
 }
+
+body.menu-aberto main,
+body.menu-aberto .cabecalho-visual,
+body.menu-aberto .carousel-wrapper {
+  pointer-events: none;
+}
