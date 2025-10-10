@@ -23,10 +23,9 @@
   filter: brightness(0.4);
 }
 
-/* Conteúdo sobreposto à imagem */
 .conteudo-cabecalho {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   padding: 2rem;
   background: none;
 }
@@ -46,18 +45,18 @@
   flex-wrap: wrap;
   gap: 1rem;
   padding: 1rem 2rem;
+  z-index: 1000;
 }
 
 /* 🏷️ Logo principal */
 .logo {
-  position: relative;
-  z-index: 1001;
   font-size: 2.5rem;
   font-weight: bold;
   color: #ffffff;
   text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
   text-decoration: none;
   background: transparent !important;
+  z-index: 1001;
 }
 
 .logo .tech {
@@ -66,14 +65,14 @@
 
 /* 📐 Menu de navegação */
 #mainMenu {
-  position: relative;
-  z-index: 1001;
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
   justify-content: center;
   background: none;
   isolation: isolate;
+  z-index: 1001;
+  position: relative;
 }
 
 #mainMenu ul {
@@ -109,14 +108,13 @@
 
 /* ☰ Botão sanduíche */
 .menu-toggle {
-  position: relative;
-  z-index: 1002;
   background: none;
   border: none;
   font-size: 2rem;
   cursor: pointer;
   color: #ffffff;
   display: none;
+  z-index: 1002;
 }
 
 .menu-toggle svg {
@@ -195,19 +193,18 @@ body.dark #toggle-dark {
 
   #mainMenu {
     position: fixed;
-    z-index: 99999;
     top: 0;
     left: -100%;
-    width: 70%;
-    height: 100%;
-    pointer-events: auto;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000; /* fundo sólido */
+    z-index: 99999;
     padding: 2rem 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     transition: left 0.3s ease;
-    background-color: #000000; /* fundo sólido preto */
   }
 
   #mainMenu.active {
