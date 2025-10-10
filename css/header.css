@@ -194,8 +194,8 @@ body.dark #toggle-dark {
   #mainMenu {
     position: fixed;
     top: 0;
-    left: -100%;
-    width: 100vw;
+    left: -70%;
+    width: 70%;
     height: 100vh;
     background-color: #000000; /* fundo sólido */
     z-index: 99999;
