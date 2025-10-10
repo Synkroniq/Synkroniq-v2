@@ -42,3 +42,12 @@ export function closeMenuOnLinkClick(e) {
     document.body.classList.remove('menu-aberto');
   }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('.menu-toggle')?.addEventListener('click', toggleMenu);
+  document.addEventListener('click', closeMenuOnOutsideClick);
+  document.querySelectorAll('#mainMenu a').forEach(link => {
+    link.addEventListener('click', closeMenuOnLinkClick);
+  });
+});
+
