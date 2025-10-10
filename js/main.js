@@ -38,13 +38,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // Evita múltiplos bindings
     toggleBtn.onclick = toggleMenu;
 
-    // Fecha ao clicar fora
+    // Remove listeners duplicados
+    document.removeEventListener('click', closeMenuOnOutsideClick);
     document.addEventListener('click', closeMenuOnOutsideClick);
 
-    // Fecha ao clicar em links internos
     const links = menu.querySelectorAll('a');
     links.forEach(link => {
-      link.onclick = closeMenuOnLinkClick;
+      link.removeEventListener('click', closeMenuOnLinkClick);
+      link.addEventListener('click', closeMenuOnLinkClick);
     });
 
     console.log("Menu sanduíche ativado com sucesso");
