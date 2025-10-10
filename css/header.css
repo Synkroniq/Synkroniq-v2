@@ -207,7 +207,7 @@ body.dark #toggle-dark {
     align-items: flex-start;
     justify-content: flex-start;
     transition: left 0.3s ease;
-    background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.6));
+    background-color: #000000; /* fundo sólido preto */
   }
 
   #mainMenu.active {
