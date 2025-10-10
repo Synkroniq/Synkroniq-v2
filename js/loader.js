@@ -12,7 +12,15 @@ export async function loadComponent(id, path, callback) {
     }
 
     const html = await response.text();
+
+    // Evita sobrescrever se já estiver carregado
+    if (container.getAttribute('data-loaded') === 'true') {
+      console.log(`🔁 Componente "${id}" já carregado.`);
+      return;
+    }
+
     container.innerHTML = html;
+    container.setAttribute('data-loaded', 'true');
 
     // ✅ Executa função após carregar o componente
     if (typeof callback === "function") {
