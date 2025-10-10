@@ -43,11 +43,18 @@ export function closeMenuOnLinkClick(e) {
   }
 }
 
+// ✅ Inicializa os eventos ao carregar a página
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelector('.menu-toggle')?.addEventListener('click', toggleMenu);
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const menuLinks = document.querySelectorAll('#mainMenu a');
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', toggleMenu);
+  }
+
   document.addEventListener('click', closeMenuOnOutsideClick);
-  document.querySelectorAll('#mainMenu a').forEach(link => {
+
+  menuLinks.forEach(link => {
     link.addEventListener('click', closeMenuOnLinkClick);
   });
 });
-
