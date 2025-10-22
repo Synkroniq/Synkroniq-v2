@@ -1,4 +1,4 @@
-<!-- 🧱 Cabeçalho fixo -->
+<!-- 🧱 Cabeçalho funcional -->
 <header class="topo fade-in">
   <div class="container header-flex">
     <!-- 🔷 Logotipo -->
@@ -6,7 +6,20 @@
       Synkroniq<span class="tech">.tech</span>
     </a>
 
-    <!-- ☰ Botão sanduíche -->
+    <!-- 📐 Menu horizontal para desktop -->
+    <nav class="menu-desktop" role="navigation">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="produtos.html">Produtos</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="upgrade.html">Upgrade</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+
+    <!-- ☰ Botão sanduíche (mobile) -->
     <button class="menu-toggle" aria-label="Abrir menu" type="button">
       <svg aria-hidden="true" class="e-font-icon-svg e-fas-bars" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
         <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path>
@@ -19,19 +32,19 @@
     </button>
   </div>
 </header>
-  
-  <!-- 🔷 Cabeçalho visual com imagem e conteúdo sobreposto -->
-  <section class="cabecalho-visual">
-    <div class="fundo-cabecalho">
-      <img src="assets/img/cabecalho-index.png" alt="Synkroniq Tecnologia" />
-    </div>
-    <div class="conteudo-cabecalho">
-      <h1>Tecnologia que te acompanha</h1>
-      <p>Ofertas, upgrades e curiosidades para quem vive o mundo tech</p>
-    </div>
-  </section>
 
-<!-- 📂 Menu de navegação deslizante -->
+<!-- 🔷 Cabeçalho visual com imagem e conteúdo sobreposto -->
+<section class="cabecalho-visual">
+  <div class="fundo-cabecalho">
+    <img src="assets/img/cabecalho-index.png" alt="Synkroniq Tecnologia" />
+  </div>
+  <div class="conteudo-cabecalho">
+    <h1>Tecnologia que te acompanha</h1>
+    <p>Ofertas, upgrades e curiosidades para quem vive o mundo tech</p>
+  </div>
+</section>
+
+<!-- 📂 Menu de navegação deslizante (mobile) -->
 <nav id="mainMenu" class="menu" aria-label="Navegação Principal" role="navigation">
   <ul>
     <li><a href="index.html">Início</a></li>
