@@ -23,13 +23,13 @@ document.addEventListener("DOMContentLoaded", () => {
     loadComponent("card-servico-container", "components/card-servico.html");
   }
 
-  // ☰ Ativa o menu sanduíche
+  // ☰ Ativa o menu sanduíche (mobile)
   function ativarMenuSanduiche() {
     const toggleBtn = document.querySelector('.menu-toggle');
     const menu = document.getElementById('mainMenu');
 
-    if (!toggleBtn || !menu) {
-      console.warn("Menu sanduíche não encontrado no DOM.");
+    if (!toggleBtn || !menu || window.innerWidth > 768) {
+      console.warn("Menu sanduíche não ativado: não é mobile ou elementos ausentes.");
       return;
     }
 
