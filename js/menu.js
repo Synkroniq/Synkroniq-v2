@@ -1,4 +1,4 @@
-// ✅ Alterna visibilidade do menu sanduíche
+// ✅ Alterna visibilidade do menu sanduíche (mobile)
 export function toggleMenu() {
   const menu = document.getElementById('mainMenu');
   const toggleBtn = document.querySelector('.menu-toggle');
@@ -44,7 +44,7 @@ export function closeMenuOnLinkClick(e) {
 }
 
 // ✅ Inicializa os eventos ao carregar a página
-document.addEventListener('DOMContentLoaded', () => {
+function initMenuEvents() {
   const toggleBtn = document.querySelector('.menu-toggle');
   const menuLinks = document.querySelectorAll('#mainMenu a');
 
@@ -57,4 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
   menuLinks.forEach(link => {
     link.addEventListener('click', closeMenuOnLinkClick);
   });
-});
+}
+
+// Reexecuta após carregamento dinâmico
+window.addEventListener('load', initMenuEvents);
