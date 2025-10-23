@@ -62,23 +62,25 @@
 </head>
 <body>
 
-    
-  <!-- ✅ Cabeçalho funcional carregado dinamicamente -->
-  <div id="header-container"></div>
-
-  <!-- 🔷 Cabeçalho visual com imagem e texto -->
+  <!-- 🔷 Cabeçalho visual com imagem de fundo total -->
   <section class="cabecalho-visual">
     <div class="fundo-cabecalho">
       <img src="assets/img/cabecalho-contato.png" alt="Contato Synkroniq" />
     </div>
-    
+
+    <!-- ✅ Cabeçalho funcional dentro do visual -->
+    <div class="cabecalho-superior">
+      <div id="header-container"></div>
+    </div>
+
+    <!-- Conteúdo sobreposto -->
     <div class="conteudo-cabecalho">
       <h1>Fale com a Synkroniq</h1>
       <p>Estamos prontos para te atender com agilidade e clareza</p>
     </div>
   </section>
 
-  <!-- Conteúdo principal -->
+  <!-- 📬 Conteúdo principal -->
   <main role="main" aria-label="Formulário de contato" style="padding: 2rem;">
     <h2>Entre em contato</h2>
     <form id="contato-form" action="https://formsubmit.co/eduachou@gmail.com" method="POST">
@@ -106,7 +108,7 @@
     </ul>
   </main>
 
-  <!-- Toast de sucesso -->
+  <!-- ✅ Toast de sucesso -->
   <div id="toast-sucesso" class="toast" role="status" aria-live="polite">
     <p>Sua mensagem foi enviada com sucesso!</p>
     <span class="close-toast" aria-label="Fechar toast">&times;</span>
