@@ -1,0 +1,91 @@
+/* 🔷 Cabeçalho visual da home */
+.cabecalho-visual {
+  background-image: url("../assets/img/cabecalho-index.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000; /* fallback */
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+
+/* Conteúdo sobreposto */
+.conteudo-cabecalho h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: white;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+}
+
+.conteudo-cabecalho p {
+  font-size: 1.2rem;
+  color: white;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+/* 🧭 Navegação guiada */
+.navegacao-opcoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.btn-guia {
+  background-color: #007BFF;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-guia:hover {
+  background-color: #00C6FF;
+}
+
+/* 📱 Responsividade */
+@media (max-width: 768px) {
+  .cabecalho-visual {
+    height: auto;
+    padding: 3rem 1rem 2rem;
+  }
+
+  .conteudo-cabecalho h1 {
+    font-size: 2rem;
+  }
+
+  .conteudo-cabecalho p {
+    font-size: 1rem;
+  }
+
+  .btn-guia {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .conteudo-cabecalho h1 {
+    font-size: 1.6rem;
+  }
+
+  .conteudo-cabecalho p {
+    font-size: 0.95rem;
+  }
+
+  .btn-guia {
+    font-size: 0.95rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
