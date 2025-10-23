@@ -19,9 +19,6 @@
 }
 
 .cabecalho-superior {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   z-index: 2;
 }
@@ -76,7 +73,7 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   padding: 2rem;
-  margin-top: 4rem; /* ✅ Correção aplicada */
+  margin-top: 6vh; /* ✅ Espaço proporcional ao cabeçalho visual */
 }
 
 /* 🧱 Card de produto - modo claro */
