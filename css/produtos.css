@@ -24,8 +24,7 @@
 }
 
 .conteudo-cabecalho {
-  position: relative;
-  z-index: 0; /* ✅ Corrigido para garantir que o menu fique por cima */
+  position: static;
 }
 
 .conteudo-cabecalho h1 {
