@@ -28,24 +28,25 @@
 </head>
 <body>
 
-    
-  <!-- ✅ Cabeçalho funcional carregado dinamicamente -->
-  <div id="header-container"></div>
-
-  
-  <!-- 🔷 Cabeçalho visual com imagem e texto -->
+  <!-- 🔷 Cabeçalho visual com imagem de fundo total -->
   <section class="cabecalho-visual">
     <div class="fundo-cabecalho">
       <img src="assets/img/cabecalho-upgrade.png" alt="Upgrade Synkroniq" />
     </div>
-    
+
+    <!-- ✅ Cabeçalho funcional dentro do visual -->
+    <div class="cabecalho-superior">
+      <div id="header-container"></div>
+    </div>
+
+    <!-- Conteúdo sobreposto -->
     <div class="conteudo-cabecalho">
       <h1>Upgrade Técnico</h1>
       <p>Transforme seu setup com componentes de alto desempenho</p>
     </div>
   </section>
 
-  <!-- Conteúdo principal -->
+  <!-- 🧰 Conteúdo principal -->
   <main class="container" id="lista-upgrades" role="main" aria-label="Lista de kits de upgrade técnico">
     <!-- Kits serão carregados aqui dinamicamente -->
   </main>
