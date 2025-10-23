@@ -1,72 +1,208 @@
-/* 🔷 Cabeçalho visual com fundo total */
-.cabecalho-visual {
+/* 🧱 Cabeçalho funcional fixo */
+header.topo {
   position: relative;
-  z-index: 0;
+  z-index: 3; /* acima da imagem de fundo */
   width: 100%;
-  height: 60vh;
+  background: transparent;
+}
+
+/* 🔷 Cabeçalho flexível */
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 2rem;
+}
+
+/* 🏷️ Logo principal */
+.logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  background: transparent !important;
+  z-index: 4;
+}
+
+.logo .tech {
+  color: #00FF99;
+}
+
+/* 📐 Menu horizontal para desktop */
+.menu-desktop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.menu-desktop ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-desktop li a {
+  font-weight: bold;
   color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.menu-desktop li a:hover {
+  color: #00FF99;
+}
+
+/* Oculta no mobile */
+@media (max-width: 768px) {
+  .menu-desktop {
+    display: none;
+  }
+}
+
+/* ☰ Botão sanduíche (mobile) */
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #ffffff;
+  display: none;
+  z-index: 10000;
+}
+
+.menu-toggle svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
+
+.menu-toggle.oculto {
+  display: none !important;
+}
+
+body.dark .menu-toggle {
+  color: #f5f5f5;
+}
+
+/* 🌙 Botão de alternância de tema */
+#toggle-dark {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #007BFF;
+  margin-left: 1rem;
+  transition: color 0.3s ease;
+}
+
+body.dark #toggle-dark {
+  color: #00FFAA;
+}
+
+/* 📂 Menu de navegação lateral (mobile) */
+#mainMenu {
+  position: fixed;
+  top: 0;
+  left: -70%;
+  width: 70%;
+  height: 100vh;
+  background-color: #000000;
+  z-index: 9999;
+  padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  text-align: center;
-  overflow: hidden;
+  align-items: flex-start;
+  justify-content: flex-start;
+  transition: left 0.3s ease;
 }
 
-/* Imagem de fundo */
-.fundo-cabecalho {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+#mainMenu.active {
+  left: 0;
 }
 
-.fundo-cabecalho img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.4);
-}
-
-/* Cabeçalho funcional dentro do visual */
-.cabecalho-superior {
-  position: relative;
-  z-index: 2;
+#mainMenu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
   width: 100%;
 }
 
-/* Conteúdo sobreposto */
-.conteudo-cabecalho {
-  position: relative;
-  z-index: 3;
-  padding: 2rem;
-  background: none;
+#mainMenu li {
+  width: 100%;
 }
 
-.conteudo-cabecalho h1 {
-  font-size: 2.5rem;
-  text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
-  margin-bottom: 0.5rem;
+#mainMenu a {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-weight: bold;
+  color: #f5f5f5;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: border 0.3s ease;
 }
 
-.conteudo-cabecalho p {
-  font-size: 1.2rem;
-  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+#mainMenu a:hover,
+#mainMenu a.ativo {
+  border-left: 3px solid #00C6FF;
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
-/* Responsivo */
+/* 🌙 Modo escuro */
+body.dark .logo {
+  color: #66B2FF;
+}
+
+body.dark .logo .tech {
+  color: #00FFAA;
+}
+
+body.dark #mainMenu a {
+  color: #f5f5f5;
+}
+
+body.dark #mainMenu a:hover,
+body.dark #mainMenu a.ativo {
+  background: rgba(0, 198, 255, 0.3);
+  box-shadow: 0 0 12px rgba(0, 198, 255, 0.6);
+}
+
+body.dark .menu-desktop li a {
+  color: #f5f5f5;
+}
+
+body.dark .menu-desktop li a:hover {
+  color: #00FFAA;
+}
+
+/* 📱 Responsividade */
 @media (max-width: 768px) {
-  .cabecalho-visual {
-    height: auto;
-    padding-bottom: 2rem;
+  .menu-toggle {
+    display: block;
   }
 
-  .conteudo-cabecalho h1 {
-    font-size: 1.8rem;
+  .header-flex {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
-  .conteudo-cabecalho p {
-    font-size: 1rem;
+  .logo {
+    font-size: 2.2rem;
+  }
+
+  #toggle-dark {
+    margin: 1rem auto 0;
   }
 }
