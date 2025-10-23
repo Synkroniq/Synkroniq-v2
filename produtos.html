@@ -21,24 +21,26 @@
   <meta name="theme-color" content="#007BFF" />
 </head>
 <body>
-    
-  <!-- ✅ Cabeçalho funcional carregado dinamicamente -->
-  <div id="header-container"></div>
 
-  
-  <!-- 🔷 Cabeçalho visual com imagem e texto -->
+  <!-- 🔷 Cabeçalho visual com imagem de fundo total -->
   <section class="cabecalho-visual">
     <div class="fundo-cabecalho">
       <img src="assets/img/cabecalho-produtos.png" alt="Produtos Synkroniq" />
     </div>
-    
+
+    <!-- ✅ Cabeçalho funcional dentro do visual -->
+    <div class="cabecalho-superior">
+      <div id="header-container"></div>
+    </div>
+
+    <!-- Conteúdo sobreposto -->
     <div class="conteudo-cabecalho">
       <h1>Produtos Synkroniq</h1>
       <p>Explore nossa vitrine de tecnologia</p>
     </div>
   </section>
 
-  <!-- Vitrine de produtos -->
+  <!-- 🛍️ Vitrine de produtos -->
   <main id="vitrine-produtos" role="main">
     <!-- Produtos serão carregados aqui via JS -->
   </main>
