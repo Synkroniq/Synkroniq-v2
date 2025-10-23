@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Carrega cabeçalho
+  // Carrega cabeçalho (inclui menu deslizante embutido)
   fetch("components/header.html")
     .then(res => res.text())
     .then(html => {
@@ -11,13 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(res => res.text())
     .then(html => {
       document.getElementById("footer-container").innerHTML = html;
-    });
-
-  // Carrega menu deslizante
-  fetch("components/menu.html")
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("mainMenu").innerHTML = html;
     });
 
   // Carrega produtos
