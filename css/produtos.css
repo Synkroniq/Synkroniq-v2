@@ -20,7 +20,7 @@
 
 .cabecalho-superior {
   width: 100%;
-  z-index: 0; /* ✅ Corrigido para não competir com o menu */
+  z-index: 0;
 }
 
 .conteudo-cabecalho {
@@ -74,9 +74,10 @@
   padding: 2rem;
   margin-top: 6vh;
   position: relative;
+  z-index: 0; /* ✅ Garante que o menu fique acima */
 }
 
-/* 🧱 Card de produto - modo claro */
+/* 🧱 Card de produto */
 .card-produto {
   background-color: white;
   border: 1px solid #ddd;
@@ -86,6 +87,7 @@
   transition: transform 0.3s ease;
   animation: fadeInUp 0.6s ease both;
   position: relative;
+  z-index: 0; /* ✅ Evita que cada card crie uma camada acima do menu */
 }
 
 .card-produto:hover {
