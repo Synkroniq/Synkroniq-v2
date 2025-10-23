@@ -28,23 +28,25 @@
 </head>
 <body>
 
-      <!-- ✅ Cabeçalho funcional carregado dinamicamente -->
-  <div id="header-container"></div>
-
-  
-  <!-- 🔷 Cabeçalho visual com imagem e texto -->
+  <!-- 🔷 Cabeçalho visual com imagem de fundo total -->
   <section class="cabecalho-visual">
     <div class="fundo-cabecalho">
       <img src="assets/img/cabecalho-blog.png" alt="Blog Técnico Synkroniq" />
     </div>
-    
+
+    <!-- ✅ Cabeçalho funcional dentro do visual -->
+    <div class="cabecalho-superior">
+      <div id="header-container"></div>
+    </div>
+
+    <!-- Conteúdo sobreposto -->
     <div class="conteudo-cabecalho">
       <h1>Blog Técnico</h1>
       <p>Artigos, curiosidades e insights sobre tecnologia</p>
     </div>
   </section>
 
-  <!-- Conteúdo principal -->
+  <!-- 📚 Conteúdo principal -->
   <main id="lista-artigos" role="main" aria-label="Lista de artigos técnicos">
     <!-- Artigos serão carregados aqui -->
   </main>
