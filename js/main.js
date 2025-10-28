@@ -52,12 +52,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 📦 Registro do Service Worker
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/Synkroniq-v2/service-worker.js")
-      .then(() => console.log("Service Worker registrado com sucesso"))
-      .catch(err => console.error("Erro ao registrar Service Worker:", err));
-  }
+const modoDesenvolvimento = true; // ✅ Altere para false quando for publicar
 
+if ("serviceWorker" in navigator && !modoDesenvolvimento) {
+  navigator.serviceWorker
+    .register("/Synkroniq-v2/service-worker.js") // ✅ caminho correto para GitHub Pages
+    .then(reg => console.log("Service Worker registrado:", reg.scope))
+    .catch(err => console.error("Erro ao registrar Service Worker:", err));
+} else {
+  console.log("Modo desenvolvimento ativo — Service Worker desativado");
+}
+
+  
   // 📩 Lógica do formulário de contato com modal de confirmação
   const form = document.querySelector("#contato-form");
   const modal = document.getElementById("modal-obrigado");
