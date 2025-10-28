@@ -1,10 +1,20 @@
-const CACHE_NAME = "synkroniq-cache-v2"; // versionamento inteligente
+const CACHE_NAME = "synkroniq-cache-v2"; // ✅ Atualize este valor a cada nova versão
 
 const FILES_TO_CACHE = [
   "./",
   "./index.html",
+  "./servicos.html",
   "./css/base.css",
-  "./js/main.js"
+  "./css/header.css",
+  "./css/servicos.css",
+  "./css/footer.css",
+  "./js/main.js",
+  "./js/servicos.js",
+  "./js/menu.js",
+  "./js/darkmode.js",
+  "./components/header.html",
+  "./components/footer.html",
+  "./manifest.json"
 ];
 
 // 📦 Instalação e cache inicial
@@ -44,15 +54,18 @@ self.addEventListener("fetch", event => {
   // Ignora requisições POST, PUT, DELETE
   if (request.method !== "GET") return;
 
+  // ❌ Evita cache de dados dinâmicos (ex: JSON de serviços)
+  if (request.url.includes("/data/")) return;
+
   event.respondWith(
     caches.match(request).then(cachedResponse => {
       if (cachedResponse) return cachedResponse;
 
-      return fetch(request)
+      return fetch(request, { cache: "no-store" })
         .then(networkResponse => {
           if (!networkResponse || !networkResponse.ok) return networkResponse;
 
-          // Armazena no cache apenas arquivos estáticos
+          // ✅ Armazena apenas arquivos estáticos
           return caches.open(CACHE_NAME).then(cache => {
             cache.put(request, networkResponse.clone());
             return networkResponse;
