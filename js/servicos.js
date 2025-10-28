@@ -1,19 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Carrega cabeçalho
+  // 🔷 Carrega cabeçalho
   fetch("components/header.html")
     .then(res => res.text())
     .then(html => {
-      document.getElementById("header-container").innerHTML = html;
+      const header = document.getElementById("header-container");
+      if (header) header.innerHTML = html;
     });
 
-  // Carrega rodapé
+  // 🔷 Carrega rodapé
   fetch("components/footer.html")
     .then(res => res.text())
     .then(html => {
-      document.getElementById("footer-container").innerHTML = html;
+      const footer = document.getElementById("footer-container");
+      if (footer) footer.innerHTML = html;
     });
 
-  // Carrega serviços
+  // 🔧 Carrega serviços
   fetch("data/servicos.json")
     .then(res => {
       if (!res.ok) throw new Error("Erro ao carregar serviços");
@@ -22,6 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(servicos => {
       const lista = document.getElementById("lista-servicos");
       if (!lista) return;
+
+      lista.innerHTML = ""; // ✅ Evita duplicações
 
       servicos.forEach(servico => {
         const card = document.createElement("div");
@@ -32,15 +36,25 @@ document.addEventListener("DOMContentLoaded", () => {
         const expira = new Date(servico.expiraEm);
         const diasRestantes = Math.ceil((expira - hoje) / (1000 * 60 * 60 * 24));
 
+        // 🔧 Imagem com fallback
+        let imagemHTML = "";
+        if (servico.imagem) {
+          imagemHTML = `<img src="${servico.imagem}" alt="${servico.nome}" class="img-servico" onerror="this.src='assets/img/servico-padrao.png';">`;
+        }
+
         card.innerHTML = `
-          ${servico.imagem ? `<img src="${servico.imagem}" alt="${servico.nome}" class="img-servico">` : ""}
+          ${imagemHTML}
           <span class="categoria">${servico.categoria || "Serviço"}</span>
           <h3>${servico.nome}</h3>
           <p>${servico.descricao}</p>
           <p class="preco">${servico.preco}</p>
           ${servico.duracao ? `<p class="duracao">Duração: ${servico.duracao}</p>` : ""}
-          ${diasRestantes > 0 ? `<p class="expira">Disponível por ${diasRestantes} dia${diasRestantes > 1 ? "s" : ""}</p>` : `<p class="expira expirada">Serviço expirado</p>`}
-          <a href="https://wa.me/5544997648490?text=${encodeURIComponent(mensagem)}" target="_blank">
+          ${diasRestantes > 0
+            ? `<p class="expira">Disponível por ${diasRestantes} dia${diasRestantes > 1 ? "s" : ""}</p>`
+            : `<p class="expira expirada">Serviço expirado</p>`}
+          <a href="https://wa.me/5544997648490?text=${encodeURIComponent(mensagem)}"
+             target="_blank"
+             aria-label="Agendar serviço via WhatsApp">
             Agendar via WhatsApp
           </a>
         `;
