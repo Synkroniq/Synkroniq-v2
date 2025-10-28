@@ -1,4 +1,4 @@
-const CACHE_NAME = "synkroniq-cache-v1"; // versionamento inteligente
+const CACHE_NAME = "synkroniq-cache-v2"; // versionamento inteligente
 
 const FILES_TO_CACHE = [
   "./",
