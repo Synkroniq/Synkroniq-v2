@@ -1,10 +1,14 @@
+/* 🛠️ Lista de serviços */
 #lista-servicos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   padding: 2rem;
+  position: relative;
+  z-index: 0; /* ✅ Garante que o menu deslizante fique acima */
 }
 
+/* 🧱 Card de serviço */
 .card-servico {
   background-color: white;
   border: 1px solid #ddd;
@@ -14,7 +18,7 @@
   transition: transform 0.3s ease;
   animation: fadeInUp 0.6s ease both;
   position: relative;
-  z-index: 1;
+  z-index: 0; /* ✅ Evita conflito com o menu */
 }
 
 .card-servico:hover {
@@ -76,9 +80,19 @@
   color: white;
   text-decoration: none;
   border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
-/* Modo escuro */
+.card-servico a:hover {
+  background-color: #0056b3;
+}
+
+.card-servico a:focus {
+  outline: 2px solid #00FF99;
+  outline-offset: 2px;
+}
+
+/* 🌙 Modo escuro */
 body.dark .card-servico {
   background-color: #1e1e1e;
   border-color: #444;
@@ -115,7 +129,11 @@ body.dark .card-servico a {
   color: white;
 }
 
-/* Animação de entrada */
+body.dark .card-servico a:hover {
+  background-color: #2277cc;
+}
+
+/* ✨ Animação de entrada */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -124,5 +142,26 @@ body.dark .card-servico a {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* 📱 Responsividade extra */
+@media (max-width: 480px) {
+  #lista-servicos {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .card-servico {
+    padding: 0.8rem;
+  }
+
+  .card-servico h3 {
+    font-size: 1.2rem;
+  }
+
+  .card-servico p {
+    font-size: 0.95rem;
   }
 }
