@@ -1,167 +1,26 @@
-/* 🛠️ Lista de serviços */
-#lista-servicos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
+/* 🔷 Cabeçalho visual com fundo integrado */
+.cabecalho-visual {
   position: relative;
-  z-index: 0; /* ✅ Garante que o menu deslizante fique acima */
+  background-image: url("../assets/img/cabecalho-servicos.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  z-index: 0;
 }
 
-/* 🧱 Card de serviço */
-.card-servico {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-  animation: fadeInUp 0.6s ease both;
-  position: relative;
-  z-index: 0; /* ✅ Evita conflito com o menu */
-}
-
-.card-servico:hover {
-  transform: scale(1.02);
-}
-
-.card-servico img.img-servico {
+.cabecalho-visual #header-container {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  border-radius: 6px;
-  margin-bottom: 0.5rem;
+  z-index: 2; /* ✅ Garante que o menu fique acima da imagem */
 }
 
-.card-servico .categoria {
-  display: inline-block;
-  background-color: #007BFF;
-  color: white;
-  font-size: 0.75rem;
-  padding: 0.3rem 0.6rem;
-  border-radius: 4px;
-  margin-bottom: 0.5rem;
-}
-
-.card-servico h3 {
-  margin-bottom: 0.5rem;
-  color: #007BFF;
-}
-
-.card-servico p {
-  margin-bottom: 0.5rem;
-  color: #333;
-}
-
-.card-servico .preco {
-  font-weight: bold;
-  color: #00FF99;
-}
-
-.card-servico .duracao {
-  font-style: italic;
-  color: #555;
-}
-
-.card-servico .expira {
-  font-size: 0.85rem;
-  color: #888;
-}
-
-.card-servico .expira.expirada {
-  color: red;
-  font-weight: bold;
-}
-
-.card-servico a {
-  display: inline-block;
-  margin-top: 0.5rem;
-  padding: 0.5rem 1rem;
-  background-color: #007BFF;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.card-servico a:hover {
-  background-color: #0056b3;
-}
-
-.card-servico a:focus {
-  outline: 2px solid #00FF99;
-  outline-offset: 2px;
-}
-
-/* 🌙 Modo escuro */
-body.dark .card-servico {
-  background-color: #1e1e1e;
-  border-color: #444;
-  color: #f5f5f5;
-  box-shadow: 0 2px 6px rgba(255,255,255,0.05);
-}
-
-body.dark .card-servico h3 {
-  color: #66B2FF;
-}
-
-body.dark .card-servico p {
-  color: #ccc;
-}
-
-body.dark .card-servico .preco {
-  color: #00FFAA;
-}
-
-body.dark .card-servico .duracao {
-  color: #aaa;
-}
-
-body.dark .card-servico .expira {
-  color: #bbb;
-}
-
-body.dark .card-servico .expira.expirada {
-  color: #ff6666;
-}
-
-body.dark .card-servico a {
-  background-color: #3399FF;
-  color: white;
-}
-
-body.dark .card-servico a:hover {
-  background-color: #2277cc;
-}
-
-/* ✨ Animação de entrada */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* 📱 Responsividade extra */
-@media (max-width: 480px) {
-  #lista-servicos {
-    grid-template-columns: 1fr;
-    padding: 1.5rem;
-    gap: 1.5rem;
-  }
-
-  .card-servico {
-    padding: 0.8rem;
-  }
-
-  .card-servico h3 {
-    font-size: 1.2rem;
-  }
-
-  .card-servico p {
-    font-size: 0.95rem;
-  }
+.cabecalho-visual .conteudo-cabecalho {
+  position: relative;
+  z-index: 1;
+  margin-top: 6rem;
 }
