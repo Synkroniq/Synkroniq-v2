@@ -30,7 +30,7 @@ header {
   padding: 1rem;
   text-align: center;
   position: relative;
-  z-index: 3; /* ✅ Mantido abaixo do menu deslizante */
+  z-index: 1; /* ✅ Corrigido para não competir com o menu deslizante */
 }
 
 /* 📐 Navegação */
