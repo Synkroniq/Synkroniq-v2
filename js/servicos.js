@@ -1,20 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 🔷 Carrega cabeçalho
-  fetch("components/header.html")
-    .then(res => res.text())
-    .then(html => {
-      const header = document.getElementById("header-container");
-      if (header) header.innerHTML = html;
-    });
-
-  // 🔷 Carrega rodapé
-  fetch("components/footer.html")
-    .then(res => res.text())
-    .then(html => {
-      const footer = document.getElementById("footer-container");
-      if (footer) footer.innerHTML = html;
-    });
-
   // 🔧 Carrega serviços
   fetch("data/servicos.json")
     .then(res => {
@@ -25,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const lista = document.getElementById("lista-servicos");
       if (!lista) return;
 
-      lista.innerHTML = ""; // ✅ Evita duplicações
+      lista.innerHTML = ""; // ✅ limpa antes de renderizar
 
       servicos.forEach(servico => {
         const card = document.createElement("div");
