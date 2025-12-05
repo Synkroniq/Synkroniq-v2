@@ -17,11 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // ✅ Carregamento do rodapé
   loadComponent("footer-container", "components/footer.html");
 
-  // ✅ Carregamento do card de serviços (se existir)
-  const cardContainer = document.getElementById("card-servico-container");
-  if (cardContainer) {
-    loadComponent("card-servico-container", "components/card-servico.html");
-  }
+  // ❌ Removido carregamento duplicado de card de serviços
+  // Os serviços são carregados dinamicamente via servicos.js
 
   // ☰ Ativa o menu sanduíche (mobile)
   function ativarMenuSanduiche() {
@@ -52,18 +49,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 📦 Registro do Service Worker
-const modoDesenvolvimento = true; // ✅ Altere para false quando for publicar
+  const modoDesenvolvimento = true; // ✅ Altere para false quando for publicar
 
-if ("serviceWorker" in navigator && !modoDesenvolvimento) {
-  navigator.serviceWorker
-    .register("/Synkroniq-v2/service-worker.js") // ✅ caminho correto para GitHub Pages
-    .then(reg => console.log("Service Worker registrado:", reg.scope))
-    .catch(err => console.error("Erro ao registrar Service Worker:", err));
-} else {
-  console.log("Modo desenvolvimento ativo — Service Worker desativado");
-}
+  if ("serviceWorker" in navigator && !modoDesenvolvimento) {
+    navigator.serviceWorker
+      .register("/Synkroniq-v2/service-worker.js") // ✅ caminho correto para GitHub Pages
+      .then(reg => console.log("Service Worker registrado:", reg.scope))
+      .catch(err => console.error("Erro ao registrar Service Worker:", err));
+  } else {
+    console.log("Modo desenvolvimento ativo — Service Worker desativado");
+  }
 
-  
   // 📩 Lógica do formulário de contato com modal de confirmação
   const form = document.querySelector("#contato-form");
   const modal = document.getElementById("modal-obrigado");
