@@ -1,3 +1,40 @@
+/* 🔷 Cabeçalho visual com imagem de fundo */
+.cabecalho-visual {
+  position: relative;
+  width: 100%;
+  height: 60vh; /* altura do cabeçalho */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.fundo-cabecalho {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* imagem atrás */
+}
+
+.fundo-cabecalho img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* cobre todo espaço */
+  filter: brightness(0.6); /* escurece para destacar textos */
+}
+
+.cabecalho-superior,
+.conteudo-cabecalho {
+  position: relative;
+  z-index: 1; /* textos e menus acima da imagem */
+}
+
+/* 🔧 Lista de upgrades */
 #lista-upgrades {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -15,6 +52,7 @@
   transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
   position: relative;
   z-index: 1;
+  animation: fadeInUp 0.6s ease forwards;
 }
 
 .card-upgrade:hover {
