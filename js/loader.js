@@ -5,24 +5,22 @@ export async function loadComponent(id, path, callback, forceReload = false) {
     return;
   }
 
+  // 🚫 Se já carregado e não for forceReload, sai antes de fazer fetch
+  if (!forceReload && container.getAttribute('data-loaded') === 'true') {
+    console.log(`🔁 Componente "${id}" já carregado. Ignorando novo fetch.`);
+    return;
+  }
+
   try {
-    const response = await fetch(path, { cache: "no-store" });
+    const response = await fetch(path, { cache: "reload" }); // ✅ usa cache controlado
     if (!response.ok) {
       throw new Error(`Erro ao carregar ${path}: ${response.status}`);
     }
 
     const html = await response.text();
-
-    // Evita sobrescrever se já estiver carregado
-    if (!forceReload && container.getAttribute('data-loaded') === 'true') {
-      console.log(`🔁 Componente "${id}" já carregado.`);
-      return;
-    }
-
     container.innerHTML = html;
     container.setAttribute('data-loaded', 'true');
 
-    // ✅ Executa função após carregar o componente
     if (typeof callback === "function") {
       try {
         callback();
