@@ -1,4 +1,9 @@
+let servicosCarregados = false;
+
 document.addEventListener("DOMContentLoaded", () => {
+  if (servicosCarregados) return;
+  servicosCarregados = true;
+
   // 🔧 Carrega serviços
   fetch("data/servicos.json")
     .then(res => {
@@ -44,6 +49,9 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
 
         lista.appendChild(card);
+
+        // ✅ animação suave apenas na primeira renderização
+        setTimeout(() => card.classList.add("mostrar"), 50);
       });
     })
     .catch(err => {
